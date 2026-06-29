@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Playbook anti-procrastinação para mentes aceleradas — Landing Page estática",
   "private": true,
+  "type": "module",
   "keywords": [
     "playbook",
     "produtividade",
@@ -10,5 +11,10 @@
     "procrastinação"
   ],
   "author": "jeanavila997-ux",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "dev": "python -m http.server 8000",
+    "start": "python -m http.server 8000",
+    "build": "mkdir -p dist && cp -r landing/* dist/"
+  }
 }
