@@ -1,10 +1,14 @@
 {
   "name": "rotina-leve-playbook",
-  "version": "0.1.0",
+  "version": "1.0.0",
+  "description": "Playbook anti-procrastinação para mentes aceleradas — Landing Page estática",
   "private": true,
-  "type": "module",
-  "scripts": {
-    "dev": "python -m http.server 8000",
-    "start": "python -m http.server 8000"
-  }
+  "keywords": [
+    "playbook",
+    "produtividade",
+    "rotina",
+    "procrastinação"
+  ],
+  "author": "jeanavila997-ux",
+  "license": "MIT"
 }
