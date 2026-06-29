@@ -7,9 +7,11 @@ Este arquivo lista o que ainda falta para deixar o produto pronto para venda e e
 - [x] Ebook completo em `content/playbook.md` (31 capítulos, ~20.150 palavras)
 - [x] Capítulos separados em `content/playbook/`
 - [x] Script de compilação `scripts/compile.py`
-- [x] Script de exportação para PDF `scripts/export_pdf.py`
-- [x] PDF gerado: `content/rotina-leve-playbook.pdf` (67 páginas, ~609 KB)
-- [x] Landing page `landing/index.html` com estrutura de vendas
+- [x] Script de exportação para PDF `scripts/export_pdf.py` (copiando automaticamente para raiz web e content/)
+- [x] PDF gerado: `content/rotina-leve-playbook.pdf` e `landing/assets/rotina-leve-playbook.pdf`
+- [x] Landing page `landing/index.html` com estrutura de vendas e correções aplicadas
+- [x] Página de obrigado `landing/obrigado.html` com link de download direto corrigido
+- [x] Imagem Open Graph (`landing/assets/og-image.png`) gerada e configurada
 - [x] Repositório salvo no GitHub
 
 ## ⏳ O que ainda falta
@@ -23,21 +25,16 @@ A landing ainda usa placeholders. Precisa substituir por:
 Arquivo: `landing/index.html`
 
 ### 2. Assets visuais para o hero
-A landing ainda não tem capa real. Criar:
+A landing ainda não tem capa real baseada em imagens (usa um mockup CSS premium). Criar:
 
 - Capa 3:4 do ebook em alta resolução (imagem, não CSS)
 - Mockups de dispositivos (celular/tablet/notebook mostrando o PDF)
-- Favicon e ícone para redes sociais
+- [x] Favicon e ícone/preview para redes sociais (criado `og-image.png` e favicon)
 
 Sugestão de destino: `landing/assets/`
 
 ### 3. Página de obrigado (pós-compra)
-Criar `landing/obrigado.html` com:
-
-- Confirmação da compra
-- Botão de download do PDF
-- Link para grupo/comunidade (WhatsApp/Telegram/Discord) se houver
-- Instruções simples de acesso ao material
+- [x] Criar `landing/obrigado.html` (completo, com confirmação, instruções, suporte e link de download do PDF local funcional para hospedagem)
 
 ### 4. Fluxo de entrega pós-compra
 Configurar na Cakto:
@@ -71,9 +68,9 @@ Atualizar `landing/index.html` com:
 ### 7. Testes finais
 Antes de divulgar:
 
-- [ ] Abrir a landing no celular e no desktop
+- [x] Abrir a landing no celular e no desktop (validado no navegador simulado)
 - [ ] Testar botão de compra com link real da Cakto
-- [ ] Testar download do PDF
+- [x] Testar download do PDF (validado no navegador simulado resolvendo para `landing/assets/rotina-leve-playbook.pdf`)
 - [ ] Testar envio de e-mail de suporte
 - [ ] Verificar velocidade de carregamento
 

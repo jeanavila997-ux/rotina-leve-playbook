@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Obrigado! — Rotina Leve</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Sora:wght@600;700;800&display=swap"
+    rel="stylesheet" />
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
   <style>
     :root {
@@ -31,7 +34,10 @@
       --grad-hero: radial-gradient(120% 120% at 70% 0%, #1E2A55 0%, #0B0F1A 55%);
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -40,11 +46,23 @@
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
     }
-    h1, h2, h3 { font-family: 'Sora', 'Inter', sans-serif; letter-spacing: -0.02em; line-height: 1.1; margin: 0; }
-    .container { width: min(1160px, 92%); margin: 0 auto; }
+
+    h1,
+    h2,
+    h3 {
+      font-family: 'Sora', 'Inter', sans-serif;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      margin: 0;
+    }
+
+    .container {
+      width: min(1160px, 92%);
+      margin: 0 auto;
+    }
 
     .nav {
-      background: rgba(255,255,255,0.82);
+      background: rgba(255, 255, 255, 0.82);
       backdrop-filter: saturate(180%) blur(14px);
       -webkit-backdrop-filter: saturate(180%) blur(14px);
       border-bottom: 1px solid var(--line);
@@ -52,12 +70,28 @@
       display: flex;
       align-items: center;
     }
-    .nav-inner { display: flex; align-items: center; justify-content: center; width: 100%; }
-    .brand { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 18px; }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      font-size: 18px;
+    }
+
     .brand .dot {
-      width: 28px; height: 28px; border-radius: 9px;
+      width: 28px;
+      height: 28px;
+      border-radius: 9px;
       background: var(--grad-primary);
-      box-shadow: 0 6px 18px rgba(79,70,229,0.35);
+      box-shadow: 0 6px 18px rgba(79, 70, 229, 0.35);
     }
 
     .thanks-hero {
@@ -68,37 +102,74 @@
       position: relative;
       overflow: hidden;
     }
+
     .thanks-hero::before {
-      content: ""; position: absolute; width: 500px; height: 500px; border-radius: 50%;
-      background: #6366F1; filter: blur(120px); opacity: .3; top: -150px; left: 50%; transform: translateX(-50%);
+      content: "";
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      background: #6366F1;
+      filter: blur(120px);
+      opacity: .3;
+      top: -150px;
+      left: 50%;
+      transform: translateX(-50%);
     }
-    .thanks-content { position: relative; z-index: 1; max-width: 640px; margin: 0 auto; }
+
+    .thanks-content {
+      position: relative;
+      z-index: 1;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
     .thanks-hero h1 {
       font-size: clamp(32px, 5vw, 56px);
       font-weight: 800;
       margin-bottom: 20px;
     }
+
     .thanks-hero .grad {
       background: linear-gradient(120deg, #A5B4FC 0%, #22D3EE 60%, #FBBF24 100%);
-      -webkit-background-clip: text; background-clip: text; color: transparent;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
     }
+
     .thanks-hero p {
       font-size: clamp(16px, 1.5vw, 18px);
-      color: rgba(255,255,255,0.7);
+      color: rgba(255, 255, 255, 0.7);
       margin-bottom: 40px;
     }
 
     .btn {
-      appearance: none; border: 0; border-radius: 14px; cursor: pointer;
-      padding: 18px 32px; font-weight: 800; font-size: 16px;
-      display: inline-flex; align-items: center; justify-content: center; gap: 12px;
-      text-decoration: none; transition: transform .2s, box-shadow .2s; font-family: inherit;
+      appearance: none;
+      border: 0;
+      border-radius: 14px;
+      cursor: pointer;
+      padding: 18px 32px;
+      font-weight: 800;
+      font-size: 16px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      text-decoration: none;
+      transition: transform .2s, box-shadow .2s;
+      font-family: inherit;
     }
+
     .btn-primary {
-      background: var(--grad-primary); color: #fff;
-      box-shadow: 0 18px 40px rgba(99,102,241,0.45);
+      background: var(--grad-primary);
+      color: #fff;
+      box-shadow: 0 18px 40px rgba(99, 102, 241, 0.45);
     }
-    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 24px 56px rgba(99,102,241,0.55); }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 24px 56px rgba(99, 102, 241, 0.55);
+    }
 
     .info-box {
       background: var(--surface-2);
@@ -112,20 +183,36 @@
       box-shadow: var(--shadow-md);
       text-align: center;
     }
-    .info-box h4 { font-size: 18px; font-weight: 700; margin-bottom: 12px; }
-    .info-box p { color: var(--muted); font-size: 14px; margin-bottom: 0; }
+
+    .info-box h4 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .info-box p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 0;
+    }
 
     footer {
       background: #0B0F1A;
-      color: rgba(255,255,255,0.6);
+      color: rgba(255, 255, 255, 0.6);
       padding: 40px 0;
       text-align: center;
       font-size: 14px;
     }
-    footer a { color: #fff; text-decoration: none; font-weight: 600; }
+
+    footer a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
     .foot-disclaimer {
       margin-top: 20px;
-      color: rgba(255,255,255,0.42);
+      color: rgba(255, 255, 255, 0.42);
       font-size: 12px;
       max-width: 600px;
       margin-left: auto;
@@ -133,6 +220,7 @@
     }
   </style>
 </head>
+
 <body>
 
   <nav class="nav">
@@ -147,9 +235,15 @@
   <header class="thanks-hero">
     <div class="container thanks-content">
       <h1>Compra <span class="grad">Confirmada!</span></h1>
-      <p>Parabéns por dar esse passo. Você acaba de adquirir o Playbook Anti-Procrastinação. Seu acesso já está liberado.</p>
-      <a href="../content/rotina-leve-playbook.pdf" class="btn btn-primary" download>
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      <p>Parabéns por dar esse passo. Você acaba de adquirir o Playbook Anti-Procrastinação. Seu acesso já está
+        liberado.</p>
+      <a href="assets/rotina-leve-playbook.pdf" class="btn btn-primary" download>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+          stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+          <polyline points="7 10 12 15 17 10" />
+          <line x1="12" y1="15" x2="12" y2="3" />
+        </svg>
         Baixar Playbook (PDF)
       </a>
     </div>
@@ -158,7 +252,8 @@
   <div class="container">
     <div class="info-box">
       <h4>Próximos Passos</h4>
-      <p>Enviamos uma cópia do material para o seu e-mail cadastrado. Caso não encontre na caixa de entrada, verifique a pasta de Spam ou Promoções.</p>
+      <p>Enviamos uma cópia do material para o seu e-mail cadastrado. Caso não encontre na caixa de entrada, verifique a
+        pasta de Spam ou Promoções.</p>
     </div>
   </div>
 
@@ -172,4 +267,5 @@
   </footer>
 
 </body>
+
 </html>

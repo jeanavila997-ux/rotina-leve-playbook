@@ -1,10 +1,12 @@
 import os
+import shutil
 import markdown
 from playwright.sync_api import sync_playwright
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 INPUT = os.path.join(BASE_DIR, "content", "playbook.md")
 OUTPUT = os.path.join(BASE_DIR, "content", "rotina-leve-playbook.pdf")
+OUTPUT_WEB = os.path.join(BASE_DIR, "landing", "assets", "rotina-leve-playbook.pdf")
 
 CSS = """
 @page {
@@ -190,6 +192,11 @@ def export_pdf():
             margin={"top": "24mm", "right": "18mm", "bottom": "28mm", "left": "18mm"},
         )
         browser.close()
+
+    # Copia o PDF gerado para a raiz web (landing/assets)
+    os.makedirs(os.path.dirname(OUTPUT_WEB), exist_ok=True)
+    shutil.copyfile(OUTPUT, OUTPUT_WEB)
+    print(f"PDF copiado para a pasta da landing page: {OUTPUT_WEB}")
 
     size_kb = os.path.getsize(OUTPUT) / 1024
     print(f"PDF gerado com sucesso: {OUTPUT}")
