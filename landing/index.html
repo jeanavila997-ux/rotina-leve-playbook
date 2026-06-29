@@ -3,235 +3,672 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Rotina Leve — Playbook Anti-Procrastinação para transformar tarefas confusas em pequenas ações possíveis." />
-  <title>Rotina Leve — Playbook Anti-Procrastinação</title>
+  <meta name="description" content="Rotina Leve — Playbook Anti-Procrastinação para mentes aceleradas. Transforme tarefas confusas em pequenas ações possíveis com um método de 5 passos e um plano de 7 dias." />
+  <meta name="theme-color" content="#4F46E5" />
+  <meta property="og:title" content="Rotina Leve — Playbook Anti-Procrastinação" />
+  <meta property="og:description" content="Organize sua rotina sem depender só de força de vontade. Método prático de 5 passos + planner de 7 dias." />
+  <meta property="og:type" content="website" />
+  <title>Rotina Leve — Playbook Anti-Procrastinação para Mentes Aceleradas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --bg: #FAFBFD;
-      --text: #1E293B;
+      --bg: #0B0F1A;
+      --bg-soft: #11172A;
+      --surface: #FFFFFF;
+      --surface-2: #F5F7FB;
+      --text: #0F172A;
       --muted: #64748B;
-      --primary: #4F46E5;
-      --accent: #0EA5E9;
-      --rose: #F43F5E;
-      --card: #FFFFFF;
-      --line: #E2E8F0;
+      --muted-2: #94A3B8;
+      --primary: #6366F1;
+      --primary-2: #4F46E5;
+      --accent: #22D3EE;
+      --rose: #FB7185;
+      --gold: #FBBF24;
+      --line: rgba(15, 23, 42, 0.08);
+      --line-2: rgba(255, 255, 255, 0.10);
+      --shadow-sm: 0 6px 20px rgba(15, 23, 42, 0.06);
+      --shadow-md: 0 18px 50px rgba(15, 23, 42, 0.10);
+      --shadow-lg: 0 40px 90px rgba(15, 23, 42, 0.16);
+      --grad-primary: linear-gradient(135deg, #6366F1 0%, #4F46E5 50%, #7C3AED 100%);
+      --grad-cyan: linear-gradient(135deg, #22D3EE 0%, #6366F1 100%);
+      --grad-hero: radial-gradient(120% 120% at 70% 0%, #1E2A55 0%, #0B0F1A 55%);
     }
+
     * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
       margin: 0;
-      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: var(--bg);
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--surface);
       color: var(--text);
-      line-height: 1.5;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
     }
+    h1, h2, h3, h4 { font-family: 'Sora', 'Inter', sans-serif; letter-spacing: -0.02em; line-height: 1.05; margin: 0; }
+    p { margin: 0; }
+    a { color: inherit; }
+    img { max-width: 100%; display: block; }
+    .container { width: min(1160px, 92%); margin: 0 auto; }
+
+    /* ---------- NAV ---------- */
+    .nav {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(255,255,255,0.82);
+      backdrop-filter: saturate(180%) blur(14px);
+      -webkit-backdrop-filter: saturate(180%) blur(14px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .brand { display: flex; align-items: center; gap: 10px; font-weight: 800; letter-spacing: -0.02em; font-size: 18px; }
+    .brand .dot {
+      width: 28px; height: 28px; border-radius: 9px;
+      background: var(--grad-primary);
+      box-shadow: 0 6px 18px rgba(79,70,229,0.35);
+    }
+    .nav-links { display: flex; gap: 26px; align-items: center; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-weight: 600; font-size: 14px; transition: color .2s; }
+    .nav-links a:hover { color: var(--text); }
+    .nav-cta {
+      background: var(--text); color: #fff; padding: 10px 18px; border-radius: 12px;
+      font-weight: 700; font-size: 14px; text-decoration: none;
+      box-shadow: var(--shadow-sm); transition: transform .2s;
+    }
+    .nav-cta:hover { transform: translateY(-1px); }
+    @media (max-width: 760px) { .nav-links a:not(.nav-cta) { display: none; } }
+
+    /* ---------- HERO ---------- */
     .hero {
-      min-height: 100vh;
-      display: grid;
-      place-items: center;
-      padding: 48px 20px;
-      position: relative;
-      overflow: hidden;
+      position: relative; overflow: hidden;
+      background: var(--grad-hero);
+      color: #fff;
+      padding: 96px 0 110px;
     }
-    .glow-a, .glow-b {
-      position: absolute;
-      width: 520px;
-      height: 520px;
-      border-radius: 999px;
-      filter: blur(90px);
-      opacity: .18;
-      z-index: 0;
+    .hero::before, .hero::after {
+      content: ""; position: absolute; border-radius: 999px; filter: blur(110px); opacity: .35; z-index: 0;
     }
-    .glow-a { background: var(--primary); top: -160px; right: -180px; }
-    .glow-b { background: var(--rose); bottom: -200px; left: -180px; }
-    .wrap {
-      width: min(1120px, 100%);
-      display: grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap: 48px;
-      align-items: center;
-      position: relative;
-      z-index: 1;
+    .hero::before { width: 540px; height: 540px; background: #6366F1; top: -180px; right: -120px; }
+    .hero::after { width: 480px; height: 480px; background: #22D3EE; bottom: -220px; left: -140px; opacity: .22; }
+    .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1.08fr .92fr; gap: 56px; align-items: center; }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(255,255,255,0.08); border: 1px solid var(--line-2);
+      color: #C7D2FE; padding: 8px 14px; border-radius: 999px;
+      font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
     }
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      border: 1px solid rgba(79,70,229,.16);
-      background: white;
-      color: var(--primary);
-      padding: 8px 14px;
-      border-radius: 999px;
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: .08em;
-      text-transform: uppercase;
+    .eyebrow .pulse { width: 7px; height: 7px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 0 4px rgba(251,191,36,.25); }
+    .hero h1 {
+      font-size: clamp(40px, 6.2vw, 76px);
+      font-weight: 800; letter-spacing: -0.04em; margin: 22px 0 18px;
     }
-    h1 {
-      font-size: clamp(44px, 7vw, 82px);
-      line-height: .96;
-      letter-spacing: -0.06em;
-      margin: 22px 0;
+    .hero h1 .grad {
+      background: linear-gradient(120deg, #A5B4FC 0%, #22D3EE 60%, #FBBF24 100%);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
     }
-    h1 span { color: var(--primary); }
-    .sub {
-      font-size: clamp(18px, 2vw, 22px);
-      color: var(--muted);
-      max-width: 680px;
-    }
-    .actions {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-      margin-top: 32px;
-    }
+    .hero .lead { font-size: clamp(17px, 1.8vw, 20px); color: rgba(255,255,255,0.78); max-width: 560px; }
+    .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 30px; }
     .btn {
-      appearance: none;
-      border: 0;
-      border-radius: 16px;
-      padding: 18px 24px;
-      font-weight: 900;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
+      appearance: none; border: 0; border-radius: 14px; cursor: pointer;
+      padding: 16px 24px; font-weight: 800; font-size: 15px;
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      text-decoration: none; transition: transform .2s, box-shadow .2s; font-family: inherit;
     }
     .btn-primary {
-      background: var(--primary);
-      color: white;
-      box-shadow: 0 18px 40px rgba(79,70,229,.25);
+      background: var(--grad-primary); color: #fff;
+      box-shadow: 0 18px 40px rgba(99,102,241,0.45);
     }
-    .btn-secondary {
-      background: white;
-      color: var(--text);
-      border: 1px solid var(--line);
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 24px 56px rgba(99,102,241,0.55); }
+    .btn-ghost {
+      background: rgba(255,255,255,0.06); color: #fff; border: 1px solid var(--line-2);
     }
-    .card {
-      background: rgba(255,255,255,.82);
-      border: 1px solid var(--line);
-      border-radius: 32px;
-      box-shadow: 0 24px 80px rgba(15,23,42,.08);
-      padding: 28px;
+    .btn-ghost:hover { background: rgba(255,255,255,0.12); }
+    .hero-trust { display: flex; gap: 22px; margin-top: 28px; flex-wrap: wrap; color: rgba(255,255,255,0.62); font-size: 13px; }
+    .hero-trust span { display: inline-flex; align-items: center; gap: 8px; }
+    .hero-trust svg { width: 16px; height: 16px; color: #A5B4FC; }
+
+    /* cover mockup */
+    .cover-card {
+      position: relative; border-radius: 28px; padding: 22px;
+      background: rgba(255,255,255,0.06); border: 1px solid var(--line-2);
+      box-shadow: 0 40px 90px rgba(0,0,0,0.45);
+      transform: perspective(1200px) rotateY(-8deg) rotateX(2deg);
     }
     .cover {
-      aspect-ratio: 3 / 4;
-      border-radius: 24px;
-      background: linear-gradient(135deg, var(--primary), #111827);
-      color: white;
-      padding: 34px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      min-height: 480px;
+      aspect-ratio: 3 / 4; border-radius: 20px; overflow: hidden;
+      background: linear-gradient(160deg, #312E81 0%, #4F46E5 45%, #0E7490 100%);
+      padding: 32px 28px; display: flex; flex-direction: column; justify-content: space-between;
+      position: relative;
     }
-    .cover h2 {
-      font-size: 48px;
-      line-height: .95;
-      letter-spacing: -0.05em;
-      margin: 0;
+    .cover::before {
+      content: ""; position: absolute; inset: 0;
+      background: radial-gradient(80% 60% at 80% 10%, rgba(255,255,255,0.18), transparent 60%);
     }
-    .cover small {
-      color: rgba(255,255,255,.68);
-      font-weight: 700;
-      letter-spacing: .08em;
-      text-transform: uppercase;
+    .cover-top { position: relative; }
+    .cover-kicker { color: rgba(255,255,255,0.7); font-size: 11px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
+    .cover-title { font-family: 'Sora'; font-weight: 800; font-size: 46px; line-height: .95; margin-top: 10px; color: #fff; }
+    .cover-title em { font-style: normal; color: #FBBF24; }
+    .cover-bottom { position: relative; }
+    .cover-tag {
+      display: inline-block; background: rgba(255,255,255,0.14); border: 1px solid rgba(255,255,255,0.22);
+      color: #fff; font-size: 11px; font-weight: 700; padding: 6px 10px; border-radius: 8px; letter-spacing: .04em;
     }
-    .benefits {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-      margin-top: 28px;
+    .cover-sub { color: rgba(255,255,255,0.85); font-size: 13px; margin-top: 12px; font-weight: 600; }
+    .cover-stamp {
+      position: absolute; right: -16px; top: -16px; width: 78px; height: 78px; border-radius: 50%;
+      background: var(--gold); color: #0B0F1A; font-weight: 900; font-size: 11px;
+      display: grid; place-items: center; text-align: center; line-height: 1.1;
+      box-shadow: 0 14px 30px rgba(251,191,36,0.45); transform: rotate(8deg);
     }
-    .benefit {
-      background: white;
-      border: 1px solid var(--line);
-      border-radius: 20px;
-      padding: 20px;
-      font-size: 15px;
-      color: var(--muted);
+
+    @media (max-width: 920px) {
+      .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+      .cover-card { transform: none; max-width: 360px; margin: 0 auto; }
     }
-    .benefit strong {
-      display: block;
-      color: var(--text);
-      margin-bottom: 6px;
+
+    /* ---------- SECTION SHELL ---------- */
+    section { padding: 84px 0; }
+    .sec-eyebrow {
+      color: var(--primary-2); font-weight: 800; font-size: 12px; letter-spacing: .14em; text-transform: uppercase;
+      display: inline-flex; align-items: center; gap: 8px;
     }
-    .section {
-      padding: 72px 20px;
+    .sec-eyebrow::before { content: ""; width: 22px; height: 2px; background: var(--primary-2); border-radius: 2px; }
+    .sec-title { font-size: clamp(30px, 4vw, 46px); font-weight: 800; margin: 14px 0 14px; }
+    .sec-lead { color: var(--muted); font-size: 18px; max-width: 640px; }
+
+    /* ---------- FOR WHOM ---------- */
+    .forwhom { background: var(--surface-2); }
+    .forwhom-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 40px; }
+    .persona {
+      background: #fff; border: 1px solid var(--line); border-radius: 18px; padding: 22px;
+      transition: transform .2s, box-shadow .2s;
     }
-    .section .inner {
-      width: min(980px, 100%);
-      margin: 0 auto;
+    .persona:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+    .persona .ic {
+      width: 42px; height: 42px; border-radius: 11px; display: grid; place-items: center;
+      background: linear-gradient(135deg, #EEF2FF, #E0E7FF); color: var(--primary-2); margin-bottom: 14px;
     }
-    .price {
-      font-size: 52px;
-      font-weight: 950;
-      color: var(--primary);
-      letter-spacing: -0.05em;
+    .persona h4 { font-size: 17px; font-weight: 700; }
+    .persona p { color: var(--muted); font-size: 14px; margin-top: 6px; }
+    @media (max-width: 860px) { .forwhom-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 520px) { .forwhom-grid { grid-template-columns: 1fr; } }
+
+    /* ---------- METHOD ---------- */
+    .method-steps { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; margin-top: 44px; counter-reset: step; }
+    .step {
+      background: #fff; border: 1px solid var(--line); border-radius: 18px; padding: 24px 20px;
+      position: relative; transition: transform .2s, box-shadow .2s;
     }
-    .old {
-      color: var(--muted);
-      text-decoration: line-through;
-      font-size: 22px;
-      margin-right: 12px;
+    .step:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+    .step .num {
+      counter-increment: step; width: 38px; height: 38px; border-radius: 11px;
+      background: var(--grad-primary); color: #fff; font-weight: 800;
+      display: grid; place-items: center; margin-bottom: 14px; font-family: 'Sora';
     }
-    @media (max-width: 840px) {
-      .wrap { grid-template-columns: 1fr; }
-      .benefits { grid-template-columns: 1fr; }
-      .cover { min-height: 400px; }
+    .step .num::before { content: counter(step); }
+    .step h4 { font-size: 16px; font-weight: 700; }
+    .step p { color: var(--muted); font-size: 14px; margin-top: 6px; }
+    @media (max-width: 1000px) { .method-steps { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 520px) { .method-steps { grid-template-columns: 1fr; } }
+
+    /* ---------- INCLUDED ---------- */
+    .included { background: linear-gradient(180deg, #0B0F1A 0%, #11172A 100%); color: #fff; }
+    .included .sec-eyebrow { color: #A5B4FE; }
+    .included .sec-eyebrow::before { background: #A5B4FE; }
+    .included .sec-title { color: #fff; }
+    .included .sec-lead { color: rgba(255,255,255,0.7); }
+    .incl-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 44px; }
+    .incl-card {
+      background: rgba(255,255,255,0.04); border: 1px solid var(--line-2); border-radius: 18px; padding: 26px;
+      transition: transform .2s, border-color .2s;
     }
+    .incl-card:hover { transform: translateY(-4px); border-color: rgba(165,180,254,0.4); }
+    .incl-card .ic {
+      width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; margin-bottom: 16px;
+      background: linear-gradient(135deg, rgba(99,102,241,0.25), rgba(34,211,238,0.18)); color: #C7D2FE;
+    }
+    .incl-card h4 { font-size: 18px; font-weight: 700; color: #fff; }
+    .incl-card p { color: rgba(255,255,255,0.66); font-size: 14px; margin-top: 8px; }
+    .incl-card .tag {
+      display: inline-block; margin-top: 14px; font-size: 11px; font-weight: 800; letter-spacing: .1em;
+      text-transform: uppercase; color: #FBBF24; padding: 5px 10px; border-radius: 7px;
+      background: rgba(251,191,36,0.12); border: 1px solid rgba(251,191,36,0.25);
+    }
+    @media (max-width: 860px) { .incl-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 520px) { .incl-grid { grid-template-columns: 1fr; } }
+
+    /* ---------- 7 DAY PLAN ---------- */
+    .plan-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 12px; margin-top: 44px; }
+    .day {
+      background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 18px 14px;
+      transition: transform .2s, box-shadow .2s;
+    }
+    .day:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+    .day .d-label { font-size: 11px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: var(--primary-2); }
+    .day h4 { font-size: 16px; font-weight: 700; margin-top: 6px; }
+    .day p { color: var(--muted); font-size: 13px; margin-top: 6px; }
+    @media (max-width: 1000px) { .plan-grid { grid-template-columns: repeat(4, 1fr); } }
+    @media (max-width: 620px) { .plan-grid { grid-template-columns: repeat(2, 1fr); } }
+
+    /* ---------- PRICING ---------- */
+    .pricing { background: var(--surface-2); }
+    .price-wrap { display: grid; grid-template-columns: 1.2fr .8fr; gap: 32px; margin-top: 44px; align-items: start; }
+    .price-card {
+      background: #fff; border: 1px solid var(--line); border-radius: 24px; padding: 36px;
+      box-shadow: var(--shadow-md); position: relative; overflow: hidden;
+    }
+    .price-card::before {
+      content: ""; position: absolute; top: 0; left: 0; right: 0; height: 5px; background: var(--grad-primary);
+    }
+    .price-flag {
+      position: absolute; top: 18px; right: 18px; background: var(--gold); color: #0B0F1A;
+      font-size: 11px; font-weight: 900; letter-spacing: .08em; padding: 6px 10px; border-radius: 8px;
+    }
+    .price-card h3 { font-size: 22px; font-weight: 800; }
+    .price-row { display: flex; align-items: baseline; gap: 12px; margin: 18px 0 6px; }
+    .price-old { color: var(--muted-2); text-decoration: line-through; font-size: 22px; font-weight: 700; }
+    .price-now { font-family: 'Sora'; font-size: 56px; font-weight: 800; color: var(--primary-2); letter-spacing: -0.04em; }
+    .price-cents { font-size: 18px; color: var(--muted); font-weight: 600; }
+    .price-note { color: var(--muted); font-size: 14px; }
+    .price-list { list-style: none; padding: 0; margin: 22px 0 0; display: grid; gap: 10px; }
+    .price-list li { display: flex; gap: 10px; align-items: flex-start; font-size: 15px; color: var(--text); }
+    .price-list li svg { width: 20px; height: 20px; color: var(--primary-2); flex: 0 0 auto; margin-top: 2px; }
+    .price-cta { margin-top: 26px; width: 100%; }
+    .price-fine { font-size: 12px; color: var(--muted); margin-top: 14px; text-align: center; }
+
+    .upsell-stack { display: grid; gap: 16px; }
+    .upsell {
+      background: #fff; border: 1px solid var(--line); border-radius: 20px; padding: 22px;
+      box-shadow: var(--shadow-sm);
+    }
+    .upsell .u-tag {
+      font-size: 10px; font-weight: 900; letter-spacing: .12em; text-transform: uppercase;
+      color: #fff; background: var(--grad-cyan); padding: 4px 8px; border-radius: 6px; display: inline-block;
+    }
+    .upsell.bump .u-tag { background: linear-gradient(135deg, #FBBF24, #F97316); color: #0B0F1A; }
+    .upsell h4 { font-size: 16px; font-weight: 700; margin-top: 10px; }
+    .upsell p { color: var(--muted); font-size: 13px; margin-top: 4px; }
+    .upsell .u-price { font-weight: 800; color: var(--primary-2); font-size: 18px; margin-top: 8px; }
+
+    @media (max-width: 920px) { .price-wrap { grid-template-columns: 1fr; } }
+
+    /* ---------- GUARANTEE ---------- */
+    .guarantee {
+      display: flex; gap: 22px; align-items: center; max-width: 880px; margin: 0 auto;
+      background: linear-gradient(135deg, #ECFDF5, #F0FDF4); border: 1px solid #BBF7D0;
+      border-radius: 22px; padding: 28px 32px;
+    }
+    .guarantee .seal {
+      flex: 0 0 auto; width: 86px; height: 86px; border-radius: 50%;
+      background: #10B981; color: #fff; display: grid; place-items: center; font-weight: 900;
+      font-size: 12px; text-align: center; line-height: 1.1; box-shadow: 0 14px 30px rgba(16,185,129,.35);
+    }
+    .guarantee h4 { font-size: 20px; font-weight: 800; }
+    .guarantee p { color: #166534; font-size: 15px; margin-top: 4px; }
+
+    /* ---------- FAQ ---------- */
+    .faq { max-width: 820px; margin: 40px auto 0; }
+    .faq details {
+      background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 4px 20px;
+      margin-bottom: 12px; transition: box-shadow .2s;
+    }
+    .faq details[open] { box-shadow: var(--shadow-sm); }
+    .faq summary {
+      cursor: pointer; list-style: none; padding: 16px 0; font-weight: 700; font-size: 16px;
+      display: flex; justify-content: space-between; align-items: center; gap: 12px;
+    }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary .chev { transition: transform .2s; color: var(--muted); }
+    .faq details[open] summary .chev { transform: rotate(180deg); }
+    .faq .a { padding: 0 0 18px; color: var(--muted); font-size: 15px; }
+
+    /* ---------- CTA STRIP ---------- */
+    .cta-strip {
+      background: var(--grad-hero); color: #fff; text-align: center; padding: 90px 0; position: relative; overflow: hidden;
+    }
+    .cta-strip::before {
+      content: ""; position: absolute; width: 480px; height: 480px; border-radius: 50%;
+      background: #6366F1; filter: blur(120px); opacity: .3; top: -160px; left: 50%; transform: translateX(-50%);
+    }
+    .cta-strip .inner { position: relative; z-index: 1; }
+    .cta-strip h2 { font-size: clamp(30px, 4vw, 46px); font-weight: 800; }
+    .cta-strip p { color: rgba(255,255,255,0.75); font-size: 18px; max-width: 560px; margin: 14px auto 26px; }
+    .cta-strip .btn-primary { font-size: 16px; padding: 18px 30px; }
+
+    /* ---------- FOOTER ---------- */
+    footer { background: #0B0F1A; color: rgba(255,255,255,0.6); padding: 56px 0 40px; font-size: 14px; }
+    .foot-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 32px; }
+    .foot-grid h5 { color: #fff; font-size: 14px; font-weight: 700; margin-bottom: 12px; letter-spacing: .04em; }
+    .foot-grid a { color: rgba(255,255,255,0.6); text-decoration: none; display: block; padding: 4px 0; }
+    .foot-grid a:hover { color: #fff; }
+    .foot-brand { display: flex; align-items: center; gap: 10px; font-weight: 800; color: #fff; font-size: 18px; margin-bottom: 12px; }
+    .foot-brand .dot { width: 28px; height: 28px; border-radius: 9px; background: var(--grad-primary); }
+    .foot-disclaimer {
+      margin-top: 36px; padding-top: 24px; border-top: 1px solid var(--line-2);
+      color: rgba(255,255,255,0.42); font-size: 12px; line-height: 1.6;
+    }
+    @media (max-width: 760px) { .foot-grid { grid-template-columns: 1fr; } }
+
+    /* utilities */
+    .center { text-align: center; }
+    .center .sec-eyebrow::before { display: none; }
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity .6s, transform .6s; }
+    .reveal.in { opacity: 1; transform: none; }
   </style>
 </head>
 <body>
-  <main class="hero">
-    <div class="glow-a"></div>
-    <div class="glow-b"></div>
 
-    <div class="wrap">
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="container nav-inner">
+      <div class="brand"><span class="dot"></span> Rotina Leve</div>
+      <div class="nav-links">
+        <a href="#metodo">Método</a>
+        <a href="#conteudo">Conteúdo</a>
+        <a href="#plano">Plano 7 dias</a>
+        <a href="#oferta">Preço</a>
+        <a href="#faq">Dúvidas</a>
+        <a class="nav-cta" href="#oferta">Quero a Rotina Leve →</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="container hero-grid">
       <section>
-        <div class="badge">Playbook prático · 7 dias</div>
-        <h1>Organize sua rotina sem depender só de <span>força de vontade.</span></h1>
-        <p class="sub">
-          Um playbook anti-procrastinação para transformar tarefas confusas em pequenas ações possíveis, usando blocos curtos, checklists e um plano simples de 7 dias.
+        <span class="eyebrow"><span class="pulse"></span> Playbook prático · 7 dias</span>
+        <h1>Organize sua rotina sem depender só de <span class="grad">força de vontade.</span></h1>
+        <p class="lead">
+          Um playbook anti-procrastinação para mentes aceleradas. Transforme tarefas confusas
+          em pequenas ações possíveis — com um método de 5 passos, blocos curtos de foco e um plano simples de 7 dias.
         </p>
-        <div class="actions">
+        <div class="hero-cta">
           <a class="btn btn-primary" href="#oferta">Quero Começar Minha Rotina Leve →</a>
-          <a class="btn btn-secondary" href="#conteudo">Ver o que vem dentro</a>
+          <a class="btn btn-ghost" href="#metodo">Ver o método</a>
+        </div>
+        <div class="hero-trust">
+          <span>✔ Acesso imediato</span>
+          <span>✔ Pagamento único</span>
+          <span>✔ 7 dias de garantia</span>
         </div>
       </section>
 
-      <aside class="card">
+      <aside class="cover-card">
+        <div class="cover-stamp">E-book<br>digital</div>
         <div class="cover">
-          <div>
-            <small>Playbook Digital</small>
-            <h2>Rotina<br>Leve</h2>
+          <div class="cover-top">
+            <div class="cover-kicker">Playbook Digital</div>
+            <div class="cover-title">Rotina<br>Leve<em>.</em></div>
           </div>
-          <p>Anti-Procrastinação para Mentes Aceleradas</p>
+          <div class="cover-bottom">
+            <span class="cover-tag">Anti-Procrastinação</span>
+            <p class="cover-sub">Para mentes aceleradas</p>
+          </div>
         </div>
       </aside>
     </div>
-  </main>
+  </header>
 
-  <section class="section" id="conteudo">
-    <div class="inner">
-      <h2>O que você recebe</h2>
-      <div class="benefits">
-        <div class="benefit"><strong>Playbook PDF</strong> Um guia direto para aplicar em 7 dias.</div>
-        <div class="benefit"><strong>Checklist 5 minutos</strong> Um protocolo rápido para sair da trava inicial.</div>
-        <div class="benefit"><strong>Planner de 7 dias</strong> Plano simples para começar, revisar e continuar.</div>
+  <!-- FOR WHOM -->
+  <section class="forwhom" id="publico">
+    <div class="container">
+      <div class="center">
+        <span class="sec-eyebrow">Para quem é</span>
+        <h2 class="sec-title">Feito para mentes que funcionam em ritmo acelerado</h2>
+        <p class="sec-lead" style="margin: 0 auto;">Se você sente que tem muita coisa na cabeça e pouco começo real, este playbook foi escrito para você.</p>
+      </div>
+      <div class="forwhom-grid">
+        <div class="persona reveal">
+          <div class="ic">🎯</div>
+          <h4>Estudantes</h4>
+          <p>Têm a matéria inteira na frente e travam na primeira página.</p>
+        </div>
+        <div class="persona reveal">
+          <div class="ic">💻</div>
+          <h4>Programadores</h4>
+          <p>Abrem o editor, olham para a tela e perdem tempo em tarefas paralelas.</p>
+        </div>
+        <div class="persona reveal">
+          <div class="ic">🎨</div>
+          <h4>Criadores de conteúdo</h4>
+          <p>Têm ideia, mas adiam o post, o vídeo e o lançamento por dias.</p>
+        </div>
+        <div class="persona reveal">
+          <div class="ic">🏠</div>
+          <h4>Quem trabalha em casa</h4>
+          <p>Mistura casa, trabalho e cobrança — e a rotina vira bagunça.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="section" id="oferta">
-    <div class="inner card">
-      <h2>Oferta de lançamento</h2>
-      <p><span class="old">R$ 97</span><span class="price">R$ 47</span></p>
-      <p>Pagamento único. Acesso imediato ao playbook e bônus.</p>
-      <a class="btn btn-primary" href="https://pay.cakto.com.br/SEU-LINK-AQUI">Garantir acesso imediato →</a>
-      <p style="font-size:12px;color:var(--muted);margin-top:18px;">
-        Material educativo. Não substitui avaliação médica, psicológica ou tratamento profissional.
-      </p>
+  <!-- METHOD -->
+  <section id="metodo">
+    <div class="container">
+      <div class="center">
+        <span class="sec-eyebrow">O método Rotina Leve</span>
+        <h2 class="sec-title">Cinco passos para reduzir o atrito e começar</h2>
+        <p class="sec-lead" style="margin: 0 auto;">A ideia não é virar uma máquina de produtividade. É reduzir o peso da primeira ação até ela ficar pequena o bastante para começar.</p>
+      </div>
+      <div class="method-steps">
+        <div class="step reveal"><div class="num"></div><h4>Esvaziar a cabeça</h4><p>Tire tudo da mente em uma lista. Não organize ainda — só despeje.</p></div>
+        <div class="step reveal"><div class="num"></div><h4>Escolher uma tarefa</h4><p>Pergunte: se eu resolver só uma coisa hoje, qual deixaria o dia mais leve?</p></div>
+        <div class="step reveal"><div class="num"></div><h4>Quebrar em microação</h4><p>Transforme “fazer o projeto” em “abrir a pasta do projeto”.</p></div>
+        <div class="step reveal"><div class="num"></div><h4>Bloco de foco leve</h4><p>5, 15 ou 25 minutos. Celular longe, uma aba, uma tarefa visível.</p></div>
+        <div class="step reveal"><div class="num"></div><h4>Pequena vitória</h4><p>Registre o que começou. Progresso visível cria continuidade.</p></div>
+      </div>
     </div>
   </section>
+
+  <!-- INCLUDED -->
+  <section class="included" id="conteudo">
+    <div class="container">
+      <div class="center">
+        <span class="sec-eyebrow">O que você recebe</span>
+        <h2 class="sec-title">Um kit completo para destravar a semana</h2>
+        <p class="sec-lead" style="margin: 0 auto;">Tudo pronto para usar no mesmo dia. Sem enrolled em curso longo, sem promessa de perfeição.</p>
+      </div>
+      <div class="incl-grid">
+        <div class="incl-card reveal">
+          <div class="ic">📘</div>
+          <h4>Playbook Rotina Leve</h4>
+          <p>Guia direto com o método de 5 passos, protocolo de emergência e exemplos práticos.</p>
+          <span class="tag">Produto principal</span>
+        </div>
+        <div class="incl-card reveal">
+          <div class="ic">✅</div>
+          <h4>Checklist Primeiros 5 Minutos</h4>
+          <p>Protocolo rápido para sair da trava inicial e começar qualquer tarefa em 5 minutos.</p>
+          <span class="tag">Bônus</span>
+        </div>
+        <div class="incl-card reveal">
+          <div class="ic">🗓️</div>
+          <h4>Planner de 7 dias</h4>
+          <p>Plano diário para esvaziar, reduzir, microagir, focar, revisar e recomeçar com clareza.</p>
+          <span class="tag">Bônus</span>
+        </div>
+        <div class="incl-card reveal">
+          <div class="ic">🗺️</div>
+          <h4>Mapa de obstáculos</h4>
+          <p>Identifique o que mais trava você e crie um atalho específico para cada obstáculo.</p>
+          <span class="tag">Bônus</span>
+        </div>
+        <div class="incl-card reveal">
+          <div class="ic">📊</div>
+          <h4>Página de acompanhamento</h4>
+          <p>Uma página simples para registrar pequenas vitórias e preparar a próxima ação.</p>
+          <span class="tag">Bônus</span>
+        </div>
+        <div class="incl-card reveal">
+          <div class="ic">🆘</div>
+          <h4>Protocolo de emergência</h4>
+          <p>Sequência de 6 passos para usar quando você travar no meio de uma tarefa importante.</p>
+          <span class="tag">Bônus</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7 DAY PLAN -->
+  <section id="plano">
+    <div class="container">
+      <div class="center">
+        <span class="sec-eyebrow">Plano de 7 dias</span>
+        <h2 class="sec-title">Sua primeira semana, passo a passo</h2>
+        <p class="sec-lead" style="margin: 0 auto;">Cada dia tem uma missão pequena. No fim de 7 dias você tem um sistema que funciona nos dias bons e nos confusos.</p>
+      </div>
+      <div class="plan-grid">
+        <div class="day reveal"><div class="d-label">Dia 1</div><h4>Esvaziar</h4><p>Liste tudo que está na cabeça.</p></div>
+        <div class="day reveal"><div class="d-label">Dia 2</div><h4>Reduzir</h4><p>Escolha uma tarefa principal.</p></div>
+        <div class="day reveal"><div class="d-label">Dia 3</div><h4>Microação</h4><p>Quebre em 5 passos pequenos.</p></div>
+        <div class="day reveal"><div class="d-label">Dia 4</div><h4>Ambiente</h4><p>Remova uma distração visível.</p></div>
+        <div class="day reveal"><div class="d-label">Dia 5</div><h4>Bloco 15min</h4><p>Faça uma sessão curta de foco.</p></div>
+        <div class="day reveal"><div class="d-label">Dia 6</div><h4>Revisão</h4><p>Veja o que funcionou e o que pesou.</p></div>
+        <div class="day reveal"><div class="d-label">Dia 7</div><h4>Recomeço</h4><p>Monte a próxima semana com clareza.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="pricing" id="oferta">
+    <div class="container">
+      <div class="center">
+        <span class="sec-eyebrow">Oferta de lançamento</span>
+        <h2 class="sec-title">Acesso imediato por um preço leve</h2>
+        <p class="sec-lead" style="margin: 0 auto;">Pagamento único. Sem mensalidade. O playbook e todos os bônus no mesmo dia.</p>
+      </div>
+
+      <div class="price-wrap">
+        <div class="price-card reveal">
+          <span class="price-flag">Lançamento</span>
+          <h3>Rotina Leve — Playbook completo</h3>
+          <div class="price-row">
+            <span class="price-old">R$ 97</span>
+            <span class="price-now">R$ 47</span>
+          </div>
+          <p class="price-note">Pagamento único · acesso imediato · 7 dias de garantia</p>
+          <ul class="price-list">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg> Playbook Rotina Leve (PDF)</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg> Checklist Primeiros 5 Minutos</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg> Planner de 7 dias</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg> Mapa de obstáculos</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg> Página de acompanhamento diário</li>
+          </ul>
+          <a class="btn btn-primary price-cta" href="https://pay.cakto.com.br/SEU-LINK-AQUI">Garantir acesso imediato →</a>
+          <p class="price-fine">Material educativo e prático. Não substitui avaliação médica, psicológica ou tratamento profissional.</p>
+        </div>
+
+        <div class="upsell-stack">
+          <div class="upsell bump reveal">
+            <span class="u-tag">Order bump · R$ 17</span>
+            <h4>Planner Anti-Procrastinação de 7 Dias</h4>
+            <p>Versão imprimível e digitável para acompanhar cada dia da semana.</p>
+            <div class="u-price">+ R$ 17 no checkout</div>
+          </div>
+          <div class="upsell reveal">
+            <span class="u-tag">Upsell · R$ 97</span>
+            <h4>Mini curso em áudio: 7 dias para destravar</h4>
+            <p>7 episódios curtos para ouvir no caminho e aplicar no mesmo dia.</p>
+            <div class="u-price">Oferta após a compra</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GUARANTEE -->
+  <section style="padding: 60px 0;">
+    <div class="container">
+      <div class="guarantee reveal">
+        <div class="seal">7 dias<br>de garantia</div>
+        <div>
+          <h4>Teste por 7 dias. Se não fizer sentido, peça reembolso.</h4>
+          <p>Aplique o método por uma semana. Se a sua rotina não ficar mais leve, escreva e devolvemos cada centavo. Sem perguntas, sem atrito.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="container">
+      <div class="center">
+        <span class="sec-eyebrow">Dúvidas frequentes</span>
+        <h2 class="sec-title">Tudo que você pode estar se perguntando</h2>
+      </div>
+      <div class="faq">
+        <details>
+          <summary>Preciso já ter disciplina para começar? <span class="chev">▾</span></summary>
+          <div class="a">Não. O ponto central do playbook é justamente reduzir a dependência de disciplina e força de vontade. Você começa pequeno e cria continuidade com pequenas vitórias.</div>
+        </details>
+        <details>
+          <summary>Isso é um tratamento para TDAH? <span class="chev">▾</span></summary>
+          <div class="a">Não. Rotina Leve é um material educativo e prático de organização pessoal. Não substitui avaliação médica, psicológica ou tratamento profissional. Se você suspeita de TDAH, procure um profissional de saúde.</div>
+        </details>
+        <details>
+          <summary>Quanto tempo leva para aplicar? <span class="chev">▾</span></summary>
+          <div class="a">O método é desenhado para ser aplicado em 7 dias, com pequenas ações diárias. Cada bloco de foco leva de 5 a 25 minutos. Você pode repetir o ciclo quantas vezes quiser.</div>
+        </details>
+        <details>
+          <summary>Como recebo o material? <span class="chev">▾</span></summary>
+          <div class="a">Após a confirmação do pagamento, você recebe o acesso imediato ao playbook em PDF e aos bônus, diretamente no e-mail usado na compra.</div>
+        </details>
+        <details>
+          <summary>E se não funcionar para mim? <span class="chev">▾</span></summary>
+          <div class="a">Você tem 7 dias de garantia. Se o material não fizer sentido para a sua rotina, basta solicitar o reembolso — sem precisar justificar.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA STRIP -->
+  <section class="cta-strip">
+    <div class="container inner">
+      <h2>Sua próxima ação pode ser pequena.</h2>
+      <p>O primeiro passo para uma rotina mais leve não é um plano gigante — é começar. O playbook te mostra como.</p>
+      <a class="btn btn-primary" href="#oferta">Quero Começar Minha Rotina Leve →</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="foot-grid">
+        <div>
+          <div class="foot-brand"><span class="dot"></span> Rotina Leve</div>
+          <p>Playbook anti-procrastinação para mentes aceleradas. Um jeito mais leve de começar, continuar e finalizar tarefas importantes.</p>
+        </div>
+        <div>
+          <h5>Produto</h5>
+          <a href="#metodo">Método</a>
+          <a href="#conteudo">Conteúdo</a>
+          <a href="#plano">Plano de 7 dias</a>
+          <a href="#oferta">Comprar</a>
+        </div>
+        <div>
+          <h5>Suporte</h5>
+          <a href="#faq">Dúvidas frequentes</a>
+          <a href="#oferta">Garantia de 7 dias</a>
+          <a href="mailto:suporte@rotinaleve.com">suporte@rotinaleve.com</a>
+        </div>
+      </div>
+      <div class="foot-disclaimer">
+        © <span id="yr"></span> Rotina Leve. Todos os direitos reservados. Este material é educativo e prático, voltado para organização pessoal e redução de procrastinação. Não constitui aconselhamento médico, psicológico ou tratamento de saúde. Não substitui avaliação ou acompanhamento profissional. Resultados variam conforme aplicação individual.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Year
+    document.getElementById('yr').textContent = new Date().getFullYear();
+
+    // Reveal on scroll
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  </script>
 </body>
 </html>
