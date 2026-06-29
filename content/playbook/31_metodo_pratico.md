@@ -6,6 +6,7 @@ Você não precisa mudar sua personalidade para ser mais produtivo.
 O problema muitas vezes não é falta de vontade. É excesso de atrito.
 
 Atrito é tudo aquilo que dificulta o começo:
+
 - tarefa grande demais;
 - ambiente bagunçado;
 - celular por perto;
@@ -20,6 +21,7 @@ A proposta deste playbook é simples:
 ## Página 2 — O Método Rotina Leve
 
 O método tem 5 etapas:
+
 1. Esvaziar a cabeça
 2. Escolher uma tarefa
 3. Quebrar em microação
@@ -35,6 +37,7 @@ Pegue uma folha, bloco de notas ou app simples e escreva tudo que está ocupando
 Não organize ainda. Apenas despeje.
 
 Exemplo:
+
 - responder mensagem;
 - terminar post;
 - pagar conta;
@@ -70,6 +73,7 @@ A pergunta-chave:
 ## Página 6 — Etapa 4: Bloco de Foco Leve
 
 Use blocos curtos. Escolha um:
+
 - 5 minutos para destravar;
 - 15 minutos para avançar;
 - 25 minutos para foco profundo.
@@ -87,6 +91,7 @@ O cérebro precisa enxergar progresso. Pequenas vitórias criam continuidade.
 ## Página 8 — Protocolo de Emergência: Estou Travado
 
 Quando travar, faça este processo:
+
 1. Respire fundo 3 vezes.
 2. Escreva: “Estou travado porque...”
 3. Reduza a tarefa pela metade.

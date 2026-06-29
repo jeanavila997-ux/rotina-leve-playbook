@@ -2,7 +2,7 @@
 
 ## O Ciclo do Excesso de Esforço
 
-Você já começou uma segunda-feira decidido a mudar de vida? Acordou mais cedo, fez exercícios intensos, comeu perfeitamente, trabalhou focado por horas e, no fim do dia, sentiu que finalmente tinha "entrado nos eixos". Mas, na quarta-feira, você já estava exausto. Na quinta, pulou o treino. Na sexta, pediu um delivery e passou a noite no sofá, sentindo que havia falhado novamente. O ciclo recomeça, sempre baseado em fazer muito esforço de uma vez só, para depois desistir por cansaço. 
+Você já começou uma segunda-feira decidido a mudar de vida? Acordou mais cedo, fez exercícios intensos, comeu perfeitamente, trabalhou focado por horas e, no fim do dia, sentiu que finalmente tinha "entrado nos eixos". Mas, na quarta-feira, você já estava exausto. Na quinta, pulou o treino. Na sexta, pediu um delivery e passou a noite no sofá, sentindo que havia falhado novamente. O ciclo recomeça, sempre baseado em fazer muito esforço de uma vez só, para depois desistir por cansaço.
 
 ## A Dor da Inconstância
 
@@ -26,10 +26,10 @@ O método da Rotina Leve baseia-se em um princípio simples: **menos esforço, m
 
 ## Exercício Prático: O Seu Mínimo Diário
 
-Pegue a sua lista de objetivos ou hábitos que tem tentado implementar e falhado. Para cada um deles, escreva qual seria o "Mínimo Viável". 
+Pegue a sua lista de objetivos ou hábitos que tem tentado implementar e falhado. Para cada um deles, escreva qual seria o "Mínimo Viável".
 
-*   Exemplo: Em vez de "Estudar 2 horas de inglês", escreva "Fazer 1 lição de 5 minutos no aplicativo".
-*   Exemplo: Em vez de "Treinar pesado por 1 hora", escreva "Colocar a roupa de ginástica e caminhar por 10 minutos".
+- Exemplo: Em vez de "Estudar 2 horas de inglês", escreva "Fazer 1 lição de 5 minutos no aplicativo".
+- Exemplo: Em vez de "Treinar pesado por 1 hora", escreva "Colocar a roupa de ginástica e caminhar por 10 minutos".
 
 O seu compromisso diário passa a ser apenas com o Mínimo Viável. Se depois de começar você quiser fazer mais, ótimo. Se não, você cumpriu a sua meta.
 

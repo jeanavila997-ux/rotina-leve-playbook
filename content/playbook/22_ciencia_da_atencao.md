@@ -28,9 +28,10 @@ Para recuperar o foco, você não precisa de mais força de vontade; você preci
 
 Amanhã, escolha **apenas uma** tarefa que exige concentração.
 Antes de começar:
+
 1. Coloque o celular no modo avião (ou em outro cômodo).
 2. Feche todas as abas do navegador que não são essenciais para a tarefa.
-3. Ajuste um cronômetro para 25 minutos e trabalhe sem parar até o alarme tocar. 
+3. Ajuste um cronômetro para 25 minutos e trabalhe sem parar até o alarme tocar.
 Observe a diferença na qualidade do seu trabalho e no seu nível de estresse.
 
 ## Resumo

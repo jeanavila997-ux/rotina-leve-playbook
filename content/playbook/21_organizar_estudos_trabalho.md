@@ -20,16 +20,17 @@ Nosso cérebro não é multitarefa; ele apenas alterna rapidamente entre diferen
 
 A chave para não se sobrecarregar não é fazer tudo ao mesmo tempo, mas fazer uma coisa de cada vez com presença total.
 
-1. **A Regra dos Blocos de Foco:** Divida o seu dia em blocos temáticos. Por exemplo: Manhã para trabalho, início da noite para estudos. Durante o bloco de trabalho, não pense nos estudos. Durante os estudos, esqueça o trabalho. 
+1. **A Regra dos Blocos de Foco:** Divida o seu dia em blocos temáticos. Por exemplo: Manhã para trabalho, início da noite para estudos. Durante o bloco de trabalho, não pense nos estudos. Durante os estudos, esqueça o trabalho.
 2. **Prioridades por Temporada:** Aceite que em algumas semanas o trabalho exigirá mais de você, e em outras, os estudos ou a família. Não tente equilibrar o dia; tente equilibrar a semana ou o mês.
 3. **O Desligamento Intencional:** Crie rituais de transição. Uma pequena caminhada, um banho ou uma xícara de chá podem sinalizar para o seu cérebro que o bloco de trabalho acabou e que o bloco de vida pessoal começou.
 
 ## Exercício Prático: O Mapa da Semana
 
-Pegue um calendário ou uma folha de papel. 
+Pegue um calendário ou uma folha de papel.
+
 1. Pinte com uma cor os blocos de tempo "inegociáveis" (seu horário fixo de trabalho, por exemplo).
 2. Defina **apenas um** bloco de 30 a 60 minutos por dia para os seus estudos.
-3. Estabeleça um horário limite para o "fim do expediente", após o qual você não checará mais e-mails ou mensagens de trabalho. 
+3. Estabeleça um horário limite para o "fim do expediente", após o qual você não checará mais e-mails ou mensagens de trabalho.
 
 O objetivo não é preencher todos os espaços, mas garantir que as coisas mais importantes tenham um momento protegido e sem distrações.
 

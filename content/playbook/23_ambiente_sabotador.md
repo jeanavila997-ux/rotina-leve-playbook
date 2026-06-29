@@ -22,7 +22,7 @@ Em vez de lutar contra a bagunça todos os dias, você precisa transformar o seu
 
 1. **Reduza o Ruído Visual:** Onde você trabalha e relaxa deve ter o mínimo de objetos fora do lugar possível. Guarde o que não é usado diariamente. Quanto menos coisas para o cérebro processar, mais foco sobra.
 2. **Deixe o Hábito Visível:** Se você quer ler mais, deixe o livro no travesseiro. Se quer treinar de manhã, deixe a roupa de ginástica do lado da cama. O ambiente deve ser o "gatilho" para o comportamento positivo.
-3. **A Regra dos Dois Minutos Diários:** No fim do dia, gaste exatamente dois minutos recolhendo o lixo, as xícaras e organizando a mesa para o dia seguinte. 
+3. **A Regra dos Dois Minutos Diários:** No fim do dia, gaste exatamente dois minutos recolhendo o lixo, as xícaras e organizando a mesa para o dia seguinte.
 
 ## Exercício Prático: O Reset do Ambiente
 

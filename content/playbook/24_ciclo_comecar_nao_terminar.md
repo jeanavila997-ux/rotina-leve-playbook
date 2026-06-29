@@ -28,8 +28,8 @@ Para parar de abandonar projetos, você precisa reduzir as expectativas iniciais
 
 Liste 3 projetos ou objetivos que você começou e não terminou nos últimos meses.
 Para cada um, decida agora:
-*   **Finalizar:** Reduza o escopo drasticamente para terminar em uma semana.
-*   **Descartar:** Assuma que não é mais prioridade e risque da lista (sem culpa).
+- **Finalizar:** Reduza o escopo drasticamente para terminar em uma semana.
+- **Descartar:** Assuma que não é mais prioridade e risque da lista (sem culpa).
 A sensação de fechar esses "ciclos abertos" libera uma enorme quantidade de energia mental.
 
 ## Resumo
