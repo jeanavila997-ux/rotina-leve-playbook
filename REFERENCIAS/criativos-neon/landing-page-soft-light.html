@@ -1,0 +1,1334 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TDAH Descomplicado — Landing Page de Vendas (Design System Soft Light)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=STIX+Two+Text:ital,wght@0,400;0,700;0,900;1,400&family=Source+Code+Pro:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --neon-primary: #4F46E5;
+    --neon-secondary: #0EA5E9;
+    --neon-accent: #F43F5E;
+    --neon-surface: #FFFFFF;
+    --neon-text: #1E293B;
+    --neon-dark: #FAFBFD;
+    --neon-muted: #FAFBFD;
+    --neon-warning: #F59E0B;
+    --neon-danger: #EF4444;
+    --neon-success: #10B981;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Roboto', sans-serif;
+    background: var(--neon-dark);
+    color: var(--neon-text);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* === NAV === */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(79, 70, 229, 0.08);
+    padding: 16px 0;
+  }
+
+  nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .logo .logo-mark {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: var(--neon-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'STIX Two Text', serif;
+    font-size: 18px;
+    font-weight: 900;
+    color: var(--neon-surface);
+  }
+
+  .logo .logo-text {
+    font-family: 'STIX Two Text', serif;
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  .nav-cta {
+    padding: 10px 24px;
+    background: var(--neon-primary);
+    color: var(--neon-surface);
+    font-family: 'Source Code Pro', monospace;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+
+  .nav-cta:hover {
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+  }
+
+  /* === HERO === */
+  .hero {
+    position: relative;
+    padding: 80px 0 100px;
+    background: var(--neon-dark);
+    overflow: hidden;
+  }
+
+  .hero .glow-hero-1 {
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(79, 70, 229, 0.08), transparent 70%);
+    filter: blur(50px);
+    pointer-events: none;
+  }
+
+  .hero .glow-hero-2 {
+    position: absolute;
+    bottom: -150px;
+    left: -100px;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(14, 165, 233, 0.05), transparent 70%);
+    filter: blur(50px);
+    pointer-events: none;
+  }
+
+  .hero .container {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 60px;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 18px;
+    border: 2px solid var(--neon-primary);
+    border-radius: 999px;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--neon-primary);
+    background: rgba(79, 70, 229, 0.04);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 24px;
+  }
+
+  .hero h1 {
+    font-family: 'STIX Two Text', serif;
+    font-size: 56px;
+    font-weight: 900;
+    line-height: 1.05;
+    color: var(--neon-text);
+    margin-bottom: 24px;
+  }
+
+  .hero h1 .neon-underline {
+    position: relative;
+  }
+
+  .hero h1 .neon-underline::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: var(--neon-primary);
+    border-radius: 3px;
+  }
+
+  .hero p {
+    font-size: 18px;
+    font-weight: 300;
+    color: rgba(30, 41, 59, 0.7);
+    margin-bottom: 32px;
+    max-width: 580px;
+    line-height: 1.7;
+  }
+
+  .hero-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 36px;
+  }
+
+  .hero-feature {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(30, 41, 59, 0.8);
+  }
+
+  .hero-feature .check {
+    color: var(--neon-success);
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+
+  .cta-group {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    padding: 18px 36px;
+    background: var(--neon-primary);
+    color: var(--neon-surface);
+    font-family: 'STIX Two Text', serif;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.2s;
+  }
+
+  .btn-primary:hover {
+    box-shadow: 0 8px 30px rgba(79, 70, 229, 0.3);
+    transform: translateY(-2px);
+  }
+
+  .btn-secondary {
+    padding: 18px 36px;
+    background: transparent;
+    color: var(--neon-text);
+    font-family: 'STIX Two Text', serif;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border: 2px solid rgba(79, 70, 229, 0.2);
+    border-radius: 12px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--neon-primary);
+    background: rgba(79, 70, 229, 0.02);
+  }
+
+  .hero-guarantee {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 20px;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 12px;
+    color: rgba(30, 41, 59, 0.4);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .hero-guarantee .shield {
+    color: var(--neon-success);
+  }
+
+  /* HERO VISUAL */
+  .hero-visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+
+  .hero-card {
+    background: var(--neon-surface);
+    border: 1px solid #E2E8F0;
+    border-radius: 24px;
+    padding: 40px;
+    width: 100%;
+    max-width: 420px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(79, 70, 229, 0.06);
+  }
+
+  .hero-card .card-glow {
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(14, 165, 233, 0.05), transparent 70%);
+    filter: blur(30px);
+  }
+
+  .hero-card .card-tag {
+    position: relative;
+    z-index: 2;
+    display: inline-block;
+    padding: 6px 14px;
+    background: rgba(79, 70, 229, 0.06);
+    border: 1px solid rgba(79, 70, 229, 0.12);
+    border-radius: 999px;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--neon-primary);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 24px;
+  }
+
+  .hero-card .card-title {
+    position: relative;
+    z-index: 2;
+    font-family: 'STIX Two Text', serif;
+    font-size: 36px;
+    font-weight: 900;
+    color: var(--neon-text);
+    line-height: 1.1;
+    margin-bottom: 12px;
+  }
+
+  .hero-card .card-sub {
+    position: relative;
+    z-index: 2;
+    font-size: 14px;
+    color: rgba(30, 41, 59, 0.6);
+    margin-bottom: 32px;
+  }
+
+  .hero-card .card-modules {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .hero-card .module-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 16px;
+    background: rgba(79, 70, 229, 0.02);
+    border: 1px solid rgba(79, 70, 229, 0.08);
+    border-radius: 10px;
+  }
+
+  .hero-card .module-item .num {
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    background: var(--neon-primary);
+    color: var(--neon-surface);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 12px;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .hero-card .module-item .text {
+    font-size: 13px;
+    color: var(--neon-text);
+  }
+
+  .hero-card .card-footer {
+    position: relative;
+    z-index: 2;
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(79, 70, 229, 0.08);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .hero-card .card-footer .label-small {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 10px;
+    color: rgba(30, 41, 59, 0.5);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .hero-card .card-footer .badge-small {
+    padding: 4px 10px;
+    background: rgba(79, 70, 229, 0.06);
+    border: 1px solid rgba(79, 70, 229, 0.12);
+    border-radius: 6px;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--neon-primary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  /* === SECTION BASE === */
+  section {
+    padding: 100px 0;
+  }
+
+  .section-label {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--neon-primary);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-align: center;
+    margin-bottom: 16px;
+  }
+
+  .section-title {
+    font-family: 'STIX Two Text', serif;
+    font-size: 44px;
+    font-weight: 900;
+    color: var(--neon-text);
+    text-align: center;
+    line-height: 1.1;
+    margin-bottom: 16px;
+  }
+
+  .section-subtitle {
+    font-size: 18px;
+    font-weight: 300;
+    color: rgba(30, 41, 59, 0.6);
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 60px;
+  }
+
+  /* === PROBLEM SECTION === */
+  .problem-section {
+    background: var(--neon-muted);
+    border-top: 1px solid rgba(79, 70, 229, 0.08);
+    border-bottom: 1px solid rgba(79, 70, 229, 0.08);
+  }
+
+  .problem-banner {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .problem-banner .alert-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: rgba(239, 68, 68, 0.1);
+    color: var(--neon-danger);
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .problem-banner h2 {
+    font-family: 'STIX Two Text', serif;
+    font-size: 32px;
+    font-weight: 900;
+    margin-bottom: 12px;
+  }
+
+  .problem-banner p {
+    font-size: 16px;
+    color: rgba(30, 41, 59, 0.6);
+    line-height: 1.7;
+  }
+
+  /* === BENEFITS GRID === */
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+
+  .benefit-card {
+    padding: 32px;
+    border-radius: 16px;
+    border: 1px solid #E2E8F0;
+    background: var(--neon-surface);
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .benefit-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--neon-primary);
+  }
+
+  .benefit-card:nth-child(2)::before { background: var(--neon-secondary); }
+  .benefit-card:nth-child(3)::before { background: var(--neon-accent); }
+  .benefit-card:nth-child(4)::before { background: var(--neon-success); }
+
+  .benefit-card:hover {
+    border-color: var(--neon-primary);
+    box-shadow: 0 10px 30px rgba(79, 70, 229, 0.08);
+    transform: translateY(-4px);
+  }
+
+  .benefit-card .emoji {
+    font-size: 36px;
+    margin-bottom: 16px;
+    display: block;
+  }
+
+  .benefit-card h3 {
+    font-family: 'STIX Two Text', serif;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  .benefit-card p {
+    font-size: 14px;
+    color: rgba(30, 41, 59, 0.6);
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+
+  .benefit-card .focus-point {
+    padding-top: 16px;
+    border-top: 1px solid rgba(79, 70, 229, 0.08);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--neon-text);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .benefit-card .focus-point .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--neon-primary);
+  }
+
+  /* === STRUGGLES CHECKLIST === */
+  .struggles-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .struggle-item {
+    display: flex;
+    gap: 16px;
+    padding: 24px;
+    border-radius: 14px;
+    border: 1px solid #E2E8F0;
+    background: var(--neon-surface);
+  }
+
+  .struggle-item .struggle-side {
+    flex-shrink: 0;
+  }
+
+  .struggle-item .tag-pill {
+    display: inline-block;
+    padding: 4px 10px;
+    background: rgba(239, 68, 68, 0.08);
+    border-radius: 6px;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--neon-danger);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+  }
+
+  .struggle-item .struggle-text {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--neon-text);
+    margin-bottom: 12px;
+  }
+
+  .struggle-item .solution-text {
+    font-size: 13px;
+    color: rgba(30, 41, 59, 0.6);
+    line-height: 1.6;
+  }
+
+  .struggle-item .solution-text strong {
+    color: var(--neon-success);
+  }
+
+  /* === MODULES === */
+  .modules-section {
+    background: var(--neon-dark);
+    color: var(--neon-text);
+  }
+
+  .modules-section .section-label {
+    color: var(--neon-primary);
+  }
+
+  .modules-section .section-title {
+    color: var(--neon-text);
+  }
+
+  .modules-section .section-subtitle {
+    color: rgba(30, 41, 59, 0.6);
+  }
+
+  .modules-list {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .module-card {
+    padding: 32px;
+    border-radius: 16px;
+    background: var(--neon-surface);
+    border: 1px solid #E2E8F0;
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.03);
+    transition: all 0.3s;
+  }
+
+  .module-card:hover {
+    border-color: rgba(79, 70, 229, 0.3);
+    background: rgba(79, 70, 229, 0.02);
+  }
+
+  .module-card .module-duration {
+    display: inline-block;
+    padding: 4px 12px;
+    background: rgba(79, 70, 229, 0.06);
+    border: 1px solid rgba(79, 70, 229, 0.12);
+    border-radius: 6px;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--neon-primary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+  }
+
+  .module-card h3 {
+    font-family: 'STIX Two Text', serif;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--neon-text);
+  }
+
+  .module-card .module-sub {
+    font-size: 14px;
+    color: rgba(30, 41, 59, 0.6);
+    margin-bottom: 20px;
+  }
+
+  .module-card .module-points {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .module-card .module-points li {
+    display: flex;
+    gap: 10px;
+    font-size: 14px;
+    color: rgba(30, 41, 59, 0.8);
+  }
+
+  .module-card .module-points li .bullet {
+    color: var(--neon-primary);
+    flex-shrink: 0;
+  }
+
+  .module-card .cognitive-impact {
+    margin-top: 20px;
+    padding: 16px;
+    background: rgba(79, 70, 229, 0.04);
+    border-left: 4px solid var(--neon-primary);
+    border-radius: 0 8px 8px 0;
+    font-size: 13px;
+    color: var(--neon-text);
+  }
+
+  .module-card .cognitive-impact strong {
+    color: var(--neon-primary);
+  }
+
+  /* === TESTIMONIALS === */
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .testimonial-card {
+    padding: 32px;
+    border-radius: 16px;
+    border: 1px solid #E2E8F0;
+    background: var(--neon-surface);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .testimonial-card .stars {
+    color: var(--neon-secondary);
+    font-size: 18px;
+    margin-bottom: 12px;
+  }
+
+  .testimonial-card .tag-pill {
+    display: inline-block;
+    padding: 4px 10px;
+    background: rgba(14, 165, 233, 0.06);
+    border: 1px solid rgba(14, 165, 233, 0.12);
+    border-radius: 6px;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--neon-secondary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+  }
+
+  .testimonial-card .text {
+    font-size: 14px;
+    font-style: italic;
+    color: rgba(30, 41, 59, 0.7);
+    line-height: 1.7;
+    margin-bottom: 24px;
+  }
+
+  .testimonial-card .person {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(30, 41, 59, 0.06);
+  }
+
+  .testimonial-card .avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--neon-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'STIX Two Text', serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--neon-surface);
+  }
+
+  .testimonial-card .person-info .name {
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  .testimonial-card .person-info .role {
+    font-size: 11px;
+    color: rgba(30, 41, 59, 0.5);
+  }
+
+  /* === FAQ === */
+  .faq-list {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .faq-item {
+    padding: 24px;
+    border-radius: 12px;
+    border: 1px solid #E2E8F0;
+    background: var(--neon-surface);
+  }
+
+  .faq-item summary {
+    font-family: 'STIX Two Text', serif;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .faq-item summary::after {
+    content: '+';
+    font-size: 24px;
+    font-weight: 300;
+    color: var(--neon-primary);
+  }
+
+  .faq-item[open] summary::after {
+    content: '−';
+  }
+
+  .faq-item .faq-answer {
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(30, 41, 59, 0.06);
+    font-size: 14px;
+    color: rgba(30, 41, 59, 0.6);
+    line-height: 1.7;
+  }
+
+  /* === FINAL CTA === */
+  .final-cta {
+    background: var(--neon-dark);
+    color: var(--neon-text);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .final-cta .glow-final {
+    position: absolute;
+    top: -200px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 800px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(79, 70, 229, 0.08), transparent 70%);
+    filter: blur(60px);
+    pointer-events: none;
+  }
+
+  .final-cta .container {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+  }
+
+  .final-cta .label {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--neon-primary);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+  }
+
+  .final-cta h2 {
+    font-family: 'STIX Two Text', serif;
+    font-size: 56px;
+    font-weight: 900;
+    line-height: 1.05;
+    margin-bottom: 16px;
+  }
+
+  .final-cta h2 .green {
+    color: var(--neon-primary);
+  }
+
+  .final-cta .sub {
+    font-size: 16px;
+    color: rgba(30, 41, 59, 0.6);
+    margin-bottom: 40px;
+  }
+
+  .pricing-box {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 40px;
+    background: var(--neon-surface);
+    border: 1px solid #E2E8F0;
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(79, 70, 229, 0.06);
+  }
+
+  .pricing-box .access-label {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 10px;
+    color: rgba(30, 41, 59, 0.5);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+  }
+
+  .pricing-box .price-display {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+
+  .pricing-box .old-price {
+    font-size: 18px;
+    color: rgba(30, 41, 59, 0.4);
+    text-decoration: line-through;
+  }
+
+  .pricing-box .new-price {
+    font-family: 'STIX Two Text', serif;
+    font-size: 56px;
+    font-weight: 900;
+    color: var(--neon-primary);
+  }
+
+  .pricing-box .currency {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--neon-primary);
+  }
+
+  .pricing-box .installments {
+    font-size: 13px;
+    color: rgba(30, 41, 59, 0.6);
+    margin-bottom: 24px;
+  }
+
+  .pricing-box .cta-btn {
+    width: 100%;
+    padding: 18px;
+    background: var(--neon-primary);
+    color: var(--neon-surface);
+    font-family: 'STIX Two Text', serif;
+    font-size: 18px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0 8px 30px rgba(79, 70, 229, 0.3);
+    transition: all 0.2s;
+    margin-bottom: 16px;
+  }
+
+  .pricing-box .cta-btn:hover {
+    box-shadow: 0 10px 40px rgba(79, 70, 229, 0.45);
+  }
+
+  .pricing-box .trust-row {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 10px;
+    color: rgba(30, 41, 59, 0.5);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  /* === FOOTER === */
+  footer {
+    background: #1E293B;
+    color: rgba(255, 255, 255, 0.45);
+    padding: 40px 0;
+    text-align: center;
+    font-size: 12px;
+  }
+
+  footer .disclaimer {
+    max-width: 600px;
+    margin: 0 auto 16px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.45);
+  }
+
+  footer .copyright {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  /* === RESPONSIVE === */
+  @media (max-width: 768px) {
+    .hero .container { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 36px; }
+    .benefits-grid { grid-template-columns: 1fr 1fr; }
+    .struggles-grid { grid-template-columns: 1fr; }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .section-title { font-size: 28px; }
+    .final-cta h2 { font-size: 36px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="container">
+    <div class="logo">
+      <div class="logo-mark">TD</div>
+      <div class="logo-text">TDAH Descomplicado</div>
+    </div>
+    <a href="#cta" class="nav-cta">Garantir Kit ⚡</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="glow-hero-1"></div>
+  <div class="glow-hero-2"></div>
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-badge">🧠 Sistema Neuro-Compatível</div>
+      <h1>O primeiro sistema de produtividade que não tenta te transformar em uma <span class="neon-underline">máquina fria.</span></h1>
+      <p>Pare de se culpar por não conseguir usar agendas tradicionais rígidas. O e-book TDAH Descomplicado foi desenhado do zero para mentes aceleradas com TDAH que precisam de atrito zero, recompensas rápidas de dopamina e flexibilidade absoluta.</p>
+      <div class="hero-features">
+        <div class="hero-feature"><span class="check">✓</span> Leitura em 5 minutos</div>
+        <div class="hero-feature"><span class="check">✓</span> Acesso vitalício imediato</div>
+        <div class="hero-feature"><span class="check">✓</span> Modelos prontos inclusos</div>
+        <div class="hero-feature"><span class="check">✓</span> Garantia sem perguntas</div>
+      </div>
+      <div class="cta-group">
+        <a href="#cta" class="btn-primary">Garantir Meu Kit por R$ 47 →</a>
+        <a href="#problema" class="btn-secondary">Fazer Teste de Sobrecarga</a>
+      </div>
+      <div class="hero-guarantee">
+        <span class="shield">🛡️</span> Garantia de 7 dias · Compra segura Cakto
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-card">
+        <div class="card-glow"></div>
+        <div class="card-tag">Sistema Completo</div>
+        <div class="card-title">TDAH DESCOMPLICADO</div>
+        <div class="card-sub">O Manual da Produtividade Sem Ansiedade</div>
+        <div class="card-modules">
+          <div class="module-item"><div class="num">1</div><div class="text">Hack do Hiperfoco Consciente</div></div>
+          <div class="module-item"><div class="num">2</div><div class="text">Segundo Cérebro de Atrito Zero</div></div>
+          <div class="module-item"><div class="num">3</div><div class="text">Planejamento Não Linear</div></div>
+          <div class="module-item"><div class="num">+</div><div class="text">Bônus: Áudios de Resgate</div></div>
+        </div>
+        <div class="card-footer">
+          <span class="label-small">Neuro-Arquitetura</span>
+          <span class="badge-small">PDF + Planilhas + Áudios</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM BANNER -->
+<section class="problem-section" id="problema">
+  <div class="container">
+    <div class="problem-banner">
+      <div class="alert-icon">⚠️</div>
+      <h2>O problema NÃO é a sua força de vontade. É o seu sistema.</h2>
+      <p>Agendas tradicionais foram feitas por pessoas neurotípicas para pessoas neurotípicas. Tentar seguir um planejamento mecânico rígido gera ansiedade e culpa instantânea no cérebro TDAH, levando à procrastinação protetora. Nosso sistema joga A FAVOR da sua química cerebral, não contra ela.</p>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section>
+  <div class="container">
+    <div class="section-label">Diferenciais do Método</div>
+    <h2 class="section-title">Neuro-Estratégias Desenhadas para TDAH</h2>
+    <p class="section-subtitle">Cada conceito do kit é acoplado a uma barreira física de atrito zero para não cansar sua atenção.</p>
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <span class="emoji">🎯</span>
+        <h3>Hiperfoco sob Demanda</h3>
+        <p>Aprenda a ativar seu canal natural de hiperfoco sem precisar esperar a pressão extrema ou o pânico da data de entrega.</p>
+        <div class="focus-point"><span class="dot"></span> Reduz o estresse cortisólico</div>
+      </div>
+      <div class="benefit-card">
+        <span class="emoji">⏳</span>
+        <h3>Fatiamento de Tempo</h3>
+        <p>Técnicas de micro-tempo desenhadas para contornar a miopia temporal. Transforme o "Não Agora" em metas de 5 minutos.</p>
+        <div class="focus-point"><span class="dot" style="background: var(--neon-secondary);"></span> Zera a paralisia inicial</div>
+      </div>
+      <div class="benefit-card">
+        <span class="emoji">🧠</span>
+        <h3>Memória Blindada</h3>
+        <p>Implemente um "Segundo Cérebro" digital e físico de atrito zero, liberando sua cabeça de tentar lembrar de compromissos.</p>
+        <div class="focus-point"><span class="dot" style="background: var(--neon-accent);"></span> Reduz esquecimentos em 94%</div>
+      </div>
+      <div class="benefit-card">
+        <span class="emoji">⚖️</span>
+        <h3>Gestão de Dopamina</h3>
+        <p>Estruture suas tarefas com ganchos de recompensa imediata, mantendo seu cérebro motivado mesmo nas atividades chatas.</p>
+        <div class="focus-point"><span class="dot" style="background: var(--neon-success);"></span> Aumenta a energia diária</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STRUGGLES -->
+<section style="background: var(--neon-muted);">
+  <div class="container">
+    <div class="section-label">Mapa de Rotas de Escape</div>
+    <h2 class="section-title">O Que Te Trava no Dia a Dia? 🎯</h2>
+    <p class="section-subtitle">Veja como o kit te resgata de cada uma das suas principais dificuldades diárias.</p>
+    <div class="struggles-grid">
+      <div class="struggle-item">
+        <div class="struggle-side">
+          <div class="tag-pill">Esquecimento</div>
+          <div class="struggle-text">Esquecer reuniões, datas ou compromissos</div>
+          <div class="solution-text"><strong>Solução:</strong> Seção 2 ensina Alertas de Atrito Zero que buzinam sem te irritar.</div>
+        </div>
+      </div>
+      <div class="struggle-item">
+        <div class="struggle-side">
+          <div class="tag-pill">Distração</div>
+          <div class="struggle-text">Começar uma atividade e acabar abrindo 30 abas</div>
+          <div class="solution-text"><strong>Solução:</strong> Barreiras de Entrada Inversa bloqueiam distrações antes que você decida começar.</div>
+        </div>
+      </div>
+      <div class="struggle-item">
+        <div class="struggle-side">
+          <div class="tag-pill">Procrastinação</div>
+          <div class="struggle-text">Sentir paralisia diante de tarefas grandes</div>
+          <div class="solution-text"><strong>Solução:</strong> A planilha "Quebrador de Blocos" desmonta projetos em micro-passos fáceis.</div>
+        </div>
+      </div>
+      <div class="struggle-item">
+        <div class="struggle-side">
+          <div class="tag-pill">Perda de Foco</div>
+          <div class="struggle-text">Perder chaves, documentos e óculos em casa</div>
+          <div class="solution-text"><strong>Solução:</strong> Protocolo "Âncoras de Visibilidade" dita onde colocar itens com contraste visual.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MODULES -->
+<section class="modules-section">
+  <div class="container">
+    <div class="section-label">Conteúdo do Método</div>
+    <h2 class="section-title">Por Dentro do TDAH Descomplicado</h2>
+    <p class="section-subtitle">Clique nos módulos para ver os tópicos sem pressa, respeitando o ritmo de foco da sua mente.</p>
+    <div class="modules-list">
+      <div class="module-card">
+        <span class="module-duration">45 min de leitura · 5 min p/ aplicar</span>
+        <h3>Módulo 1: O Hack do Hiperfoco Consciente</h3>
+        <p class="module-sub">Como domar a onda dopaminérgica do TDAH</p>
+        <ul class="module-points">
+          <li><span class="bullet">✔</span> A física da paralisia: por que você trava antes de começar</li>
+          <li><span class="bullet">✔</span> O protocolo de Aquecimento Cognitivo em 3 minutos</li>
+          <li><span class="bullet">✔</span> Como usar barulho branco estruturado para foco rápido</li>
+        </ul>
+        <div class="cognitive-impact"><strong>Impacto Cognitivo:</strong> Substitui a ansiedade do pânico por estímulos calmos.</div>
+      </div>
+      <div class="module-card">
+        <span class="module-duration">1 hora de leitura · Template incluso</span>
+        <h3>Módulo 2: O Segundo Cérebro de Atrito Zero</h3>
+        <p class="module-sub">Nunca mais gaste energia tentando lembrar das coisas</p>
+        <ul class="module-points">
+          <li><span class="bullet">✔</span> A regra dos 3 cliques para salvar qualquer informação</li>
+          <li><span class="bullet">✔</span> Como estruturar pastas físicas e digitais sem bagunça</li>
+          <li><span class="bullet">✔</span> Estratégia de lembretes invisíveis no subconsciente</li>
+        </ul>
+        <div class="cognitive-impact"><strong>Impacto Cognitivo:</strong> Zera a fadiga de memória de curto prazo.</div>
+      </div>
+      <div class="module-card">
+        <span class="module-duration">50 min de leitura · Planner incluso</span>
+        <h3>Módulo 3: Planejamento Não Linear</h3>
+        <p class="module-sub">Calendários e listas que aceitam a flutuação do seu humor</p>
+        <ul class="module-points">
+          <li><span class="bullet">✔</span> Por que listas tradicionais falham com o TDAH</li>
+          <li><span class="bullet">✔</span> O método de "Gavetas de Energia" por ânimo</li>
+          <li><span class="bullet">✔</span> Micro-compensações semanais para manter constância</li>
+        </ul>
+        <div class="cognitive-impact"><strong>Impacto Cognitivo:</strong> Previne burnout e a culpa diária.</div>
+      </div>
+      <div class="module-card">
+        <span class="module-duration">6 áudios de 5 minutos</span>
+        <h3>Bônus: Guia de Áudio de Resgate de Foco</h3>
+        <p class="module-sub">Sessões guiadas para reverter crises de procrastinação</p>
+        <ul class="module-points">
+          <li><span class="bullet">✔</span> Áudio de resgate de emergência quando você travar</li>
+          <li><span class="bullet">✔</span> Sessão de desaceleração mental pós-trabalho</li>
+          <li><span class="bullet">✔</span> Sincronizador de ritmo respiratório para foco imediato</li>
+        </ul>
+        <div class="cognitive-impact"><strong>Impacto Cognitivo:</strong> Feedback tátil e auditivo que acalma a mente hiperativa.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section>
+  <div class="container">
+    <div class="section-label">Depoimentos de Adaptação</div>
+    <h2 class="section-title">Quem Segue Nosso Ritmo Sem Ansiedade</h2>
+    <p class="section-subtitle">Histórias reais de pessoas com TDAH que encontraram paz no TDAH Descomplicado.</p>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div>
+          <div class="stars">★★★★★</div>
+          <div class="tag-pill">Resultados Práticos</div>
+          <p class="text">"O que eu mais gostei é que não tenta te forçar a acordar 5h da manhã ou fazer listas gigantes. O fatiamento de 5 minutos salvou minhas entregas profissionais."</p>
+        </div>
+        <div class="person">
+          <div class="avatar">GS</div>
+          <div class="person-info">
+            <div class="name">Guilherme Santos</div>
+            <div class="role">Designer Gráfico · TDAH diagnosticado</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div>
+          <div class="stars">★★★★★</div>
+          <div class="tag-pill">Estudos & Provas</div>
+          <p class="text">"Páginas limpas, direto ao ponto e sem enrolação. O Segundo Cérebro digital organizou minhas matérias sem me dar fadiga de decisão."</p>
+        </div>
+        <div class="person">
+          <div class="avatar">BM</div>
+          <div class="person-info">
+            <div class="name">Beatriz Mello</div>
+            <div class="role">Estudante de Medicina · TDAH combinado</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div>
+          <div class="stars">★★★★★</div>
+          <div class="tag-pill">Foco Profissional</div>
+          <p class="text">"Eu achava que nunca conseguiria manter um hábito. A técnica de Micro-Recompensas Dopaminérgicas é a única que funcionou a longo prazo."</p>
+        </div>
+        <div class="person">
+          <div class="avatar">CE</div>
+          <div class="person-info">
+            <div class="name">Carlos Eduardo</div>
+            <div class="role">Empreendedor e Programador</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section style="background: var(--neon-muted);">
+  <div class="container">
+    <div class="section-label">Dúvidas Frequentes</div>
+    <h2 class="section-title">Perguntas Frequentes 💡</h2>
+    <p class="section-subtitle">Tire suas dúvidas sem perder o foco.</p>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>O e-book serve para quem NÃO tem diagnóstico oficial de TDAH?</summary>
+        <div class="faq-answer">Com certeza! Qualquer pessoa com mentes aceleradas, dificuldades de foco, procrastinação severa ou sobrecarga diária colherá os frutos imediatamente das técnicas de atrito zero.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Em quanto tempo vou começar a ver resultados?</summary>
+        <div class="faq-answer">No exato instante em que abrir o material. Ele é projetado para leitura biónica opcional e aplicação em 5 minutos. Você terminará o primeiro módulo com uma mudança real em andamento.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Como funciona a garantia de 7 dias?</summary>
+        <div class="faq-answer">Sem pegadinhas! Se você sentir que o método não se adapta ao seu ritmo cerebral, basta nos enviar um e-mail. Devolvemos 100% do seu investimento de imediato.</div>
+      </details>
+      <details class="faq-item">
+        <summary>O material é em vídeo ou texto?</summary>
+        <div class="faq-answer">É um kit digital híbrido: guias de leitura rápida com tipografia otimizada, planilhas de atrito zero para Notion/Excel e guias em áudio de 5 minutos para ouvir em qualquer lugar.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta" id="cta">
+  <div class="glow-final"></div>
+  <div class="container">
+    <div class="label">⚡ Oferta de Lançamento Exclusiva</div>
+    <h2>Recupere Suas Horas de <span class="green">Foco Hoje.</span></h2>
+    <p class="sub">Zere a culpa crônica por não terminar seus projetos. Garanta o TDAH Descomplicado com 50% de desconto imediato.</p>
+    <div class="pricing-box">
+      <div class="access-label">Acesso vitalício + Atualizações gratuitas</div>
+      <div class="price-display">
+        <span class="old-price">R$ 97</span>
+        <span class="currency">R$</span>
+        <span class="new-price">47</span>
+      </div>
+      <div class="installments">Ou em até 12x de R$ 4,73 no cartão</div>
+      <button class="cta-btn" onclick="window.open('https://pay.cakto.com.br/9u9w6q4_940459', '_blank')">🔒 Garantir Acesso Imediato →</button>
+      <div class="trust-row">
+        <span>🛡️ Pix · Cartão · Boleto</span>
+        <span>·</span>
+        <span>🔒 SSL Seguro</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <p class="disclaimer">Este material destina-se ao desenvolvimento de habilidades práticas de produtividade e redução de atrito comportamental. Não substitui avaliação médica formal, diagnósticos clínicos ou tratamento medicamentoso.</p>
+    <p class="copyright">TDAH DESCOMPLICADO © 2026 · Todos os direitos reservados</p>
+  </div>
+</footer>
+
+</body>
+</html>

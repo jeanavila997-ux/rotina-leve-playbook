@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TDAH Descomplicado — Perfil de Cliente</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=STIX+Two+Text:ital,wght@0,400;0,700;0,900&family=Source+Code+Pro:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --neon-primary: #4F46E5;
+    --neon-secondary: #0EA5E9;
+    --neon-accent: #F43F5E;
+    --neon-surface: #FFFFFF;
+    --neon-text: #1E293B;
+    --neon-dark: #FAFBFD;
+  }
+
+  body {
+    background: var(--neon-dark);
+    color: var(--neon-text);
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.5;
+    min-height: 100vh;
+    padding: 80px 40px;
+  }
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  header {
+    margin-bottom: 72px;
+  }
+
+  .eyebrow {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 14px;
+    color: var(--neon-secondary);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 18px;
+  }
+
+  h1 {
+    font-family: 'STIX Two Text', serif;
+    font-size: 64px;
+    font-weight: 900;
+    line-height: 1.05;
+    margin-bottom: 18px;
+  }
+
+  h1 .primary { color: var(--neon-primary); }
+
+  .subtitle {
+    font-size: 22px;
+    font-weight: 300;
+    color: rgba(30, 41, 59, 0.6);
+    max-width: 600px;
+  }
+
+  .segments {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+    margin-bottom: 64px;
+  }
+
+  .segment {
+    background: var(--neon-surface);
+    border: 1px solid #E2E8F0;
+    border-radius: 16px;
+    padding: 28px;
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.03);
+    transition: all 0.2s ease;
+  }
+
+  .segment:hover {
+    border-color: var(--neon-primary);
+    box-shadow: 0 8px 24px rgba(79, 70, 229, 0.06);
+  }
+
+  .segment-number {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 13px;
+    color: var(--neon-primary);
+    margin-bottom: 14px;
+  }
+
+  .segment h2 {
+    font-family: 'STIX Two Text', serif;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  .segment p {
+    font-size: 16px;
+    color: rgba(30, 41, 59, 0.6);
+  }
+
+  .section-title {
+    font-family: 'STIX Two Text', serif;
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 36px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(79, 70, 229, 0.08);
+  }
+
+  .personas {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .persona {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 28px;
+    align-items: start;
+    background: var(--neon-surface);
+    border: 1px solid #E2E8F0;
+    border-radius: 20px;
+    padding: 32px;
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.03);
+  }
+
+  .avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--neon-primary), var(--neon-secondary));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'STIX Two Text', serif;
+    font-size: 40px;
+    font-weight: 900;
+    color: var(--neon-surface);
+    flex-shrink: 0;
+  }
+
+  .persona-info h3 {
+    font-family: 'STIX Two Text', serif;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+
+  .persona-meta {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 14px;
+    color: var(--neon-secondary);
+    margin-bottom: 18px;
+  }
+
+  .persona-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 18px;
+  }
+
+  .tag {
+    font-size: 13px;
+    font-weight: 500;
+    padding: 6px 14px;
+    border: 1px solid rgba(79, 70, 229, 0.15);
+    border-radius: 999px;
+    color: var(--neon-primary);
+    background: rgba(79, 70, 229, 0.03);
+  }
+
+  .persona-quote {
+    font-family: 'STIX Two Text', serif;
+    font-size: 20px;
+    font-style: italic;
+    color: rgba(30, 41, 59, 0.8);
+    margin-bottom: 18px;
+    padding-left: 20px;
+    border-left: 3px solid var(--neon-primary);
+  }
+
+  .persona-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 10px 24px;
+  }
+
+  .persona-list li {
+    font-size: 15px;
+    color: rgba(30, 41, 59, 0.7);
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .persona-list li::before {
+    content: '—';
+    color: var(--neon-primary);
+    font-weight: 700;
+  }
+
+  .insights {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+  }
+
+  .insight {
+    padding: 28px;
+    border-radius: 16px;
+    background: var(--neon-surface);
+    border: 1px solid #E2E8F0;
+  }
+
+  .insight h4 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--neon-primary);
+  }
+
+  .insight p {
+    font-size: 16px;
+    color: rgba(30, 41, 59, 0.6);
+  }
+
+  @media (max-width: 720px) {
+    body { padding: 48px 24px; }
+    h1 { font-size: 42px; }
+    .persona { grid-template-columns: 1fr; }
+    .avatar { width: 80px; height: 80px; font-size: 28px; }
+  }
+
+  @media print {
+    body { background: white; color: #1e293b; }
+    .segment, .persona, .insight { border-color: #ddd; }
+    .eyebrow, .persona-meta { color: var(--neon-secondary); }
+    h1 .primary, .segment-number, .section-title, .persona-list li::before, .insight h4 { color: var(--neon-primary); }
+    .subtitle, .segment p, .persona-quote, .persona-list li, .tag, .insight p { color: #333; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <div class="eyebrow">Perfil de Cliente · TDAH Descomplicado</div>
+    <h1>Quem é a pessoa por trás do <span class="primary">clique?</span></h1>
+    <p class="subtitle">Segmentos, personas e dores reais que guiam os criativos Soft Light — direto ao ponto, sem poluição visual.</p>
+  </header>
+
+  <section class="segments" aria-label="Segmentos">
+    <article class="segment">
+      <div class="segment-number">01 — Primário</div>
+      <h2>Adultos com TDAH diagnosticado</h2>
+      <p>Já têm nome para a dificuldade. Buscam estratégias práticas, validação e ferramentas que respeitem seu ritmo.</p>
+    </article>
+
+    <article class="segment">
+      <div class="segment-number">02 — Secundário</div>
+      <h2>Profissionais e estudantes sobrecarregados</h2>
+      <p>Sentem que a produtividade "deveria" ser maior. Estão cansados de métodos genéricos que não funcionam para seus cérebros.</p>
+    </article>
+
+    <article class="segment">
+      <div class="segment-number">03 — Expansão</div>
+      <h2>Pessoas com suspeita de TDAH</h2>
+      <p>Ainda não têm diagnóstico, mas se reconhecem nas dores. Querem entender sem serem patologizadas.</p>
+    </article>
+
+    <article class="segment">
+      <div class="segment-number">04 — Nicho</div>
+      <h2>Pais de crianças com TDAH</h2>
+      <p>Buscam entender o filho e criar rotinas que funcionem para uma mente neurodivergente.</p>
+    </article>
+  </section>
+
+  <section class="personas" aria-label="Personas">
+    <h2 class="section-title">Personas de referência</h2>
+
+    <article class="persona">
+      <div class="avatar">GS</div>
+      <div class="persona-info">
+        <h3>Guilherme Santos</h3>
+        <div class="persona-meta">Designer Gráfico · 28 anos · TDAH diagnosticado</div>
+        <div class="persona-tags">
+          <span class="tag">Freelancer</span>
+          <span class="tag">Hiperfoco criativo</span>
+          <span class="tag">Fadiga de decisão</span>
+        </div>
+        <blockquote class="persona-quote">"O que eu mais gostei é que não tenta te forçar a acordar 5h da manhã ou fazer listas gigantes. O fatiamento de 5 minutos salvou minhas entregas profissionais."</blockquote>
+        <ul class="persona-list">
+          <li>Esquece prazos quando está em hiperfoco</li>
+          <li>Odeia planilhas e apps complexos</li>
+          <li>Quer entregar sem sacrificar criatividade</li>
+          <li>Compra após ver prova social de pares</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="persona">
+      <div class="avatar">BM</div>
+      <div class="persona-info">
+        <h3>Beatriz Mello</h3>
+        <div class="persona-meta">Estudante de Medicina · 24 anos · TDAH combinado</div>
+        <div class="persona-tags">
+          <span class="tag">Rotina intensa</span>
+          <span class="tag">Memória de trabalho curta</span>
+          <span class="tag">Estuda com barulho</span>
+        </div>
+        <blockquote class="persona-quote">"Páginas limpas, direto ao ponto e sem enrolação. O Segundo Cérebro digital organizou minhas matérias sem me dar fadiga de decisão."</blockquote>
+        <ul class="persona-list">
+          <li>Precisa de estrutura sem rigidez</li>
+          <li>Abandona conteúdos longos e genéricos</li>
+          <li>Valoriza ferramentas que funcionam no celular</li>
+          <li>Decide rápido quando vê resultado claro</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="persona">
+      <div class="avatar">CE</div>
+      <div class="persona-info">
+        <h3>Carlos Eduardo</h3>
+        <div class="persona-meta">Empreendedor e Programador · 34 anos · TDAH inattentive</div>
+        <div class="persona-tags">
+          <span class="tag">Autônomo</span>
+          <span class="tag">Sistemas e automação</span>
+          <span class="tag">Procrastinação produtiva</span>
+        </div>
+        <blockquote class="persona-quote">"Preciso de algo que funcione junto com meu cérebro, não contra ele. Sem culpa, sem produtividade tóxica."</blockquote>
+        <ul class="persona-list">
+          <li>Organiza código melhor que a vida pessoal</li>
+          <li>Testa várias ferramentas até encontrar a certa</li>
+          <li>Valoriza transparência e lógica</li>
+          <li>Evita linguagem que soa como coach motivacional</li>
+        </ul>
+      </div>
+    </article>
+  </section>
+
+  <section style="margin-top: 72px;" aria-label="Insights de criação">
+    <h2 class="section-title">Regras para os criativos</h2>
+    <div class="insights">
+      <article class="insight">
+        <h4>01 — Uma mensagem por imagem</h4>
+        <p>Sobrecarga cognitiva = scroll imediato. Cada criativo carrega exatamente uma promessa.</p>
+      </article>
+      <article class="insight">
+        <h4>02 — Validar antes de vender</h4>
+        <p>Público TDAH já ouviu "é só se esforçar mais". A primeira resposta certa é: "não é sua culpa".</p>
+      </article>
+      <article class="insight">
+        <h4>03 — Autenticidade > polimento</h4>
+        <p>Depoimentos de pares reais superam anúncios corporativos. Fotos UGC, nomes, idade e profissão geram confiança.</p>
+      </article>
+      <article class="insight">
+        <h4>04 — Contraste e micro-recompensa</h4>
+        <p>Cérebro TDAH reage a novidade, contraste visual e desafios curtos com ganho imediato.</p>
+      </article>
+      <article class="insight">
+        <h4>05 — Empoderamento, não deficiência</h4>
+        <p>Falar em diferença neurológica, não em defeito. O produto é uma ferramenta, não uma cura.</p>
+      </article>
+      <article class="insight">
+        <h4>06 — Oferta de baixo atrito</h4>
+        <p>Teste grátis, 3 min de leitura, sem email. Reduzir fricção na decisão aumenta conversão.</p>
+      </article>
+    </div>
+  </section>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TDAH Descomplicado — Template Soft Light</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&family=Roboto:wght@300;400;700&family=Sacramento&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-main: #FAFBFD;
+      --primary: #4F46E5;
+      --secondary: #0EA5E9;
+      --accent: #F43F5E;
+      --text-main: #1E293B;
+      --text-sec: #475569;
+      --white: #FFFFFF;
+      --radius: 16px;
+      --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { 
+      background: #E2E8F0; 
+      font-family: 'Roboto', sans-serif; 
+      display: flex; 
+      justify-content: center; 
+      padding: 40px 0; 
+    }
+
+    /* EDITOR WRAPPER */
+    .editor-container {
+      display: grid;
+      grid-template-columns: 350px 1fr;
+      gap: 30px;
+      max-width: 1400px;
+      width: 100%;
+      padding: 0 20px;
+    }
+
+    .sidebar {
+      background: var(--white);
+      padding: 24px;
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      height: fit-content;
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+
+    .sidebar h2 { 
+      font-family: 'Outfit', sans-serif; 
+      color: var(--text-main); 
+      margin-bottom: 20px; 
+      font-size: 1.2rem; 
+    }
+
+    .control-group { margin-bottom: 20px; }
+    .control-group label { 
+      display: block; 
+      font-size: 0.8rem; 
+      font-weight: 700; 
+      color: var(--text-sec); 
+      margin-bottom: 8px; 
+      text-transform: uppercase;
+    }
+    .control-group input, .control-group textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #E2E8F0;
+      border-radius: 8px;
+      font-family: inherit;
+    }
+
+    /* CAROUSEL VIEW */
+    .canvas-area {
+      display: flex;
+      gap: 20px;
+      overflow-x: auto;
+      padding-bottom: 20px;
+      scroll-snap-type: x mandatory;
+    }
+
+    .slide {
+      flex: 0 0 auto;
+      width: 400px; /* Scaling for preview: actual 1080x1350 */
+      height: 540px; 
+      background: var(--bg-main);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+      scroll-snap-align: start;
+      display: flex;
+      flex-direction: column;
+      padding: 40px;
+      transition: transform 0.3s ease;
+    }
+
+    .slide:hover { transform: translateY(-5px); }
+
+    /* SLIDE ELEMENTS */
+    .badge {
+      display: inline-block;
+      padding: 4px 12px;
+      background: var(--primary);
+      color: var(--white);
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      border-radius: 100px;
+      width: fit-content;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--text-main);
+      line-height: 1.2;
+      margin-bottom: 15px;
+    }
+
+    .subtitle {
+      font-size: 1.1rem;
+      color: var(--text-sec);
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+
+    .content-list {
+      list-style: none;
+      margin-top: 20px;
+    }
+
+    .content-list li {
+      padding: 12px 0;
+      border-bottom: 1px solid #E2E8F0;
+      color: var(--text-sec);
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .content-list li::before {
+      content: '✓';
+      color: var(--primary);
+      font-weight: bold;
+    }
+
+    .cta-box {
+      margin-top: auto;
+      background: var(--primary);
+      color: var(--white);
+      padding: 15px;
+      border-radius: var(--radius);
+      text-align: center;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .footer-page {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.8rem;
+      color: var(--text-sec);
+      opacity: 0.6;
+    }
+
+    .image-bg {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      z-index: -1;
+      object-fit: cover;
+      opacity: 0.3;
+    }
+
+    /* UTILS */
+    .highlight { color: var(--primary); font-weight: 700; }
+    .script-font { font-family: 'Sacramento', cursive; font-size: 1.5rem; color: var(--primary); }
+  </style>
+</head>
+<body>
+
+  <div class="editor-container">
+    <aside class="sidebar">
+      <h2>⚙️ Configurações</h2>
+      
+      <div id="controls">
+        <!-- Controls will be injected here by JS -->
+      </div>
+
+      <button id="export-btn" style="width: 100%; padding: 15px; background: var(--text-main); color: white; border: none; border-radius: 12px; cursor: pointer; font-family: 'Outfit'; font-weight: 700; margin-top: 20px;">
+        Exportar PDF de Alta Qualidade
+      </button>
+    </aside>
+
+    <main class="canvas-area" id="canvas">
+      <!-- Slides will be injected here by JS -->
+    </main>
+  </div>
+
+  <script>
+    const slidesData = [
+      { id: 1, badge: '🧠 SISTEMA NEURO-COMPATÍVEL', title: 'O problema não é sua força de vontade.', subtitle: 'Agendas tradicionais foram feitas para neurotípicos. Aprenda a jogar a favor do seu cérebro.', image: '' },
+      { id: 2, badge: '⚠️ A ILUSÃO DO ESFORÇO', title: 'Por que você se esforça tanto e ainda se sente culpado?', subtitle: 'Você tenta forçar rotinas rígidas e lineares que exaurem sua mente.', image: '' },
+      { id: 3, badge: '🔍 O RECONHECIMENTO', title: '4 sinais clássicos de que sua rotina te sabota:', list: ['Paralisia antes de iniciar tarefas', '30 abas abertas e foco perdido', 'Foco em tarefas irrelevantes', 'Fadiga mental severa'], image: '' },
+      { id: 4, badge: '🧬 NEUROCIÊNCIA DO FOCO', title: 'O TDAH enxerga o tempo de forma diferente.', subtitle: 'Neurotípicos planejam linearmente. O TDAH vive o "Agora ou Nunca".', image: '' },
+      { id: 5, badge: '⚡ O RESGATE', title: 'A Regra de Ouro do Atrito Zero:', subtitle: '1. Micro-metas de 5 min. 2. Gavetas de Energia por ânimo.', image: '' },
+      { id: 6, badge: '📚 MÉTODO PRÁTICO', title: 'TDAH Descomplicado: O Guia Sem Ansiedade', subtitle: 'Módulos: Hiperfoco Consciente, Segundo Cérebro, Planejamento Não Linear.', image: '' },
+      { id: 7, badge: '✨ DIFERENCIAIS', title: 'O que muda na sua rotina a partir de hoje:', list: ['Foco sob demanda', 'Memória blindada', 'Rotina flexível', 'Garantia de 7 dias'], image: '' },
+      { id: 8, badge: '🚀 OFERTA ESPECIAL', title: 'Zere a paralisia e recupere seu foco hoje.', subtitle: 'De R$ 97 por apenas R$ 47', cta: 'GARANTIR MEU KIT →', image: '' },
+    ];
+
+    function renderSlides() {
+      const canvas = document.getElementById('canvas');
+      canvas.innerHTML = slidesData.map((slide, index) => `
+        <div class="slide">
+          <img src="${slide.image}" class="image-bg" onerror="this.style.display='none'">
+          <div class="badge">${slide.badge}</div>
+          <div class="title">${slide.title}</div>
+          <div class="subtitle">${slide.subtitle || ''}</div>
+          ${slide.list ? `
+            <ul class="content-list">
+              ${slide.list.map(item => `<li>${item}</li>`).join('')}
+            </ul>
+          ` : ''}
+          ${slide.cta ? `<div class="cta-box">${slide.cta}</div>` : ''}
+          <div class="footer-page">${index + 1} / 8</div>
+        </div>
+      `).join('');
+    }
+
+    function renderControls() {
+      const controls = document.getElementById('controls');
+      L
+      controls.innerHTML = slidesData.map((slide, index) => `
+        <div class="control-group" style="border: 1px solid #eee; padding: 10px; border-radius: 8px; margin-bottom: 10px;">
+          <label>Slide ${index + 1}</label>
+          <input type="text" value="${slide.badge}" oninput="updateData(${index}, 'badge', this.value)" placeholder="Badge">
+          <textarea oninput="updateData(${index}, 'title', this.value)" style="margin-top: 5px;">${slide.title}</textarea>
+          <textarea oninput="updateData(${index}, 'subtitle', this.value)" style="margin-top: 5px;">${slide.subtitle || ''}</textarea>
+        </div>
+      `).join('');
+    }
+
+    function updateData(index, field, value) {
+      slidesData[index][field] = value;
+      renderSlides();
+    }
+
+    renderSlides();
+    renderControls();
+  </script>
+</body>
+</html>

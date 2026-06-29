@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TDAH Descomplicado — Carrossel Soft Light Persuasivo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&family=Roboto:wght@300;400;500;700;900&family=Sacramento&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg-main: #FAFBFD;
+    --primary: #4F46E5;
+    --secondary: #0EA5E9;
+    --accent: #F43F5E;
+    --text-main: #1E293B;
+    --text-sec: #475569;
+    --white: #FFFFFF;
+    --radius: 20px;
+    --shadow: 0 14px 40px -10px rgba(79,70,229,0.12), 0 6px 18px -8px rgba(0,0,0,0.05);
+  }
+
+  body {
+    background: #E2E8F0;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    padding: 40px;
+  }
+
+  .label {
+    font-family: 'Outfit', sans-serif;
+    font-size: 13px;
+    color: var(--text-sec);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 700;
+  }
+
+  .slide {
+    width: 1080px;
+    height: 1350px;
+    position: relative;
+    overflow: hidden;
+    background: var(--bg-main);
+    color: var(--text-main);
+    box-shadow: var(--shadow);
+    border-radius: var(--radius);
+    display: flex;
+    flex-direction: column;
+    padding: 80px 90px;
+  }
+
+  .glow {
+    position: absolute;
+    width: 680px;
+    height: 680px;
+    border-radius: 50%;
+    filter: blur(90px);
+    z-index: 0;
+  }
+  .glow.tl { top: -220px; left: -220px; background: radial-gradient(circle, rgba(79,70,229,0.10), transparent 70%); }
+  .glow.br { bottom: -240px; right: -240px; background: radial-gradient(circle, rgba(14,165,233,0.08), transparent 70%); }
+
+  .content { position: relative; z-index: 2; display: flex; flex-direction: column; height: 100%; }
+
+  .tag {
+    font-family: 'Outfit', sans-serif;
+    font-size: 17px;
+    color: var(--primary);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 26px;
+  }
+  .tag .dot { color: var(--accent); }
+
+  h1 {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 900;
+    line-height: 1.05;
+    color: var(--text-main);
+  }
+
+  .body {
+    font-size: 30px;
+    line-height: 1.55;
+    color: var(--text-sec);
+    font-weight: 400;
+  }
+  .body strong { color: var(--text-main); font-weight: 700; }
+
+  .accent { color: var(--primary); }
+  .accent-rose { color: var(--accent); font-weight: 700; }
+
+  .page-num {
+    position: absolute;
+    bottom: 38px;
+    right: 48px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 18px;
+    color: var(--text-sec);
+    z-index: 3;
+    font-weight: 700;
+  }
+
+  .swipe {
+    position: absolute;
+    bottom: 38px;
+    left: 48px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 15px;
+    color: var(--text-sec);
+    letter-spacing: 2px;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+  .swipe .arrow { color: var(--primary); font-size: 20px; }
+
+  .card {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 28px 32px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.04);
+    border: 1px solid rgba(79,70,229,0.08);
+  }
+
+  .cta-button {
+    background: var(--primary);
+    color: #fff;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 900;
+    font-size: 36px;
+    padding: 32px 50px;
+    border-radius: 18px;
+    text-align: center;
+    box-shadow: 0 14px 40px rgba(79,70,229,0.35);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .price-box {
+    display: flex;
+    align-items: baseline;
+    gap: 18px;
+    margin: 24px 0;
+  }
+  .price-old { font-size: 32px; color: var(--text-sec); text-decoration: line-through; font-weight: 500; }
+  .price-new { font-family: 'Outfit', sans-serif; font-size: 72px; font-weight: 900; color: var(--primary); line-height: 1; }
+  .price-off { background: var(--accent); color: #fff; font-family: 'Outfit', sans-serif; font-size: 20px; font-weight: 700; padding: 8px 16px; border-radius: 10px; }
+
+  .bonus-list { display: flex; flex-direction: column; gap: 18px; margin-top: 12px; }
+  .bonus-item {
+    display: flex; align-items: center; gap: 18px;
+    font-size: 27px; color: var(--text-main); font-weight: 500;
+  }
+  .bonus-check {
+    width: 44px; height: 44px;
+    border-radius: 12px;
+    background: rgba(79,70,229,0.10);
+    color: var(--primary);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px; font-weight: 900; flex-shrink: 0;
+  }
+
+  .guarantee {
+    margin-top: 26px;
+    padding: 22px 28px;
+    border: 2px dashed rgba(79,70,229,0.30);
+    border-radius: 16px;
+    font-size: 23px; color: var(--text-main); font-weight: 500;
+    display: flex; align-items: center; gap: 16px;
+  }
+  .guarantee .shield { font-size: 34px; }
+
+  .social-proof {
+    font-family: 'Outfit', sans-serif;
+    font-size: 19px;
+    color: var(--text-sec);
+    display: flex; align-items: center; gap: 10px;
+    margin-top: 20px; font-weight: 700;
+  }
+  .stars { color: #FFD700; font-size: 24px; letter-spacing: 2px; }
+
+  .stat-row { display: flex; gap: 36px; margin-top: 32px; }
+  .stat { flex: 1; }
+  .stat .num { font-family: 'Outfit', sans-serif; font-size: 60px; font-weight: 900; color: var(--primary); line-height: 1; }
+  .stat .lbl { font-size: 21px; color: var(--text-sec); margin-top: 8px; line-height: 1.3; }
+
+  .quote {
+    font-family: 'Sacramento', cursive;
+    font-size: 52px;
+    line-height: 1.3;
+    color: var(--text-main);
+    position: relative;
+    padding-left: 36px;
+    border-left: 5px solid var(--primary);
+  }
+  .quote-author {
+    font-family: 'Outfit', sans-serif;
+    font-size: 19px;
+    color: var(--text-sec);
+    margin-top: 18px;
+    padding-left: 42px;
+    font-weight: 700;
+  }
+
+  /* SLIDE 1 */
+  .s1 h1 { font-size: 96px; }
+  .s1 .sub { font-size: 30px; color: var(--text-sec); margin-top: 24px; line-height: 1.55; }
+  .s1 .hook-line {
+    font-family: 'Outfit', sans-serif;
+    font-size: 21px; color: var(--accent);
+    margin-top: 26px; letter-spacing: 2px; font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  /* SLIDE 2 */
+  .s2 h1 { font-size: 66px; }
+  .s2 .pain-list { display: flex; flex-direction: column; gap: 20px; margin-top: 36px; }
+  .s2 .pain-item {
+    font-size: 30px; color: var(--text-main); font-weight: 500;
+    display: flex; align-items: flex-start; gap: 16px; line-height: 1.4;
+  }
+  .s2 .pain-x {
+    color: var(--accent); font-weight: 900; font-size: 34px; flex-shrink: 0; line-height: 1.2;
+  }
+
+  /* SLIDE 3 */
+  .s3 h1 { font-size: 62px; }
+  .s3 .cost { font-size: 30px; color: var(--text-main); line-height: 1.55; margin-top: 28px; }
+  .s3 .cost strong { color: var(--accent); }
+
+  /* SLIDE 4 */
+  .s4 h1 { font-size: 86px; }
+  .s4 .reveal { font-size: 31px; line-height: 1.55; color: var(--text-main); margin-top: 28px; }
+  .s4 .reveal strong { color: var(--primary); }
+
+  /* SLIDE 5 */
+  .s5 h1 { font-size: 58px; }
+  .s5 .intro { font-size: 26px; color: var(--text-sec); margin-top: 14px; }
+
+  /* SLIDE 6 */
+  .s6 h1 { font-size: 62px; }
+
+  /* SLIDE 7 */
+  .s7 { justify-content: space-between; }
+  .s7 h1 { font-size: 58px; }
+  .s7 .urgency {
+    font-family: 'Outfit', sans-serif;
+    font-size: 21px; color: var(--accent);
+    letter-spacing: 2px; margin-top: 18px; font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  @media print {
+    body { background: white; padding: 0; }
+    .label { display: none; }
+    .slide { border-radius: 0; box-shadow: none; page-break-after: always; }
+  }
+</style>
+</head>
+<body>
+
+<div class="label">CARROSSEL SOFT LIGHT · 1080x1350px · 7 SLIDES · INSTAGRAM</div>
+
+<!-- SLIDE 1 — GANCHO -->
+<div class="slide s1">
+  <div class="glow tl"></div>
+  <div class="glow br"></div>
+  <div class="content">
+    <div class="tag">TDAH DESCOMPLICADO <span class="dot">•</span> DESLIZE →</div>
+    <h1>"Eu achava que era preguiça.<br>Era <span class="accent">TDAH</span>."</h1>
+    <p class="sub">Se essa frase te atingiu, os próximos 6 slides podem mudar a forma como você vive sua rotina — para sempre.</p>
+    <p class="hook-line">→ Não role pra baixo. Leia até o fim.</p>
+  </div>
+  <div class="swipe"><span class="arrow">→</span> deslize</div>
+  <div class="page-num">01 / 07</div>
+</div>
+
+<!-- SLIDE 2 — DOR -->
+<div class="slide s2">
+  <div class="glow tl"></div>
+  <div class="glow br"></div>
+  <div class="content">
+    <div class="tag">O QUE NINGUÉM COMENTA <span class="dot">•</span> 02</div>
+    <h1>Quantas dessas você vive hoje?</h1>
+    <div class="pain-list">
+      <div class="pain-item"><span class="pain-x">✕</span>Começa 5 tarefas e termina nenhuma</div>
+      <div class="pain-item"><span class="pain-x">✕</span>Pega o celular "por 1 minuto" e perde 2 horas</div>
+      <div class="pain-item"><span class="pain-x">✕</span>Esquece compromissos mesmo com agenda lotada</div>
+      <div class="pain-item"><span class="pain-x">✕</span>Trabalha o dobro e entrega a metade</div>
+      <div class="pain-item"><span class="pain-x">✕</span>Se chama de "desorganizado" todo dia</div>
+    </div>
+    <p class="body" style="margin-top:28px;">Marcou <strong>3 ou mais</strong>? Não é falha de caráter.<br>É seu cérebro pedindo um <span class="accent">método</span>.</p>
+  </div>
+  <div class="swipe"><span class="arrow">→</span> deslize</div>
+  <div class="page-num">02 / 07</div>
+</div>
+
+<!-- SLIDE 3 — AGRAVAMENTO -->
+<div class="slide s3">
+  <div class="glow tl"></div>
+  <div class="glow br"></div>
+  <div class="content">
+    <div class="tag">O CUSTO DE NÃO FAZER NADA <span class="dot">•</span> 03</div>
+    <h1>Cada ano sem método<br>custa caro.</h1>
+    <p class="cost">São <strong>promoções não entregues</strong>, <strong>oportunidades perdidas</strong>, <strong>noites resolvendo o que dava pra ter feito cedo</strong> — e a sensação de estar sempre um passo atrás.</p>
+    <p class="cost" style="margin-top:22px;">A boa notícia? <span class="accent">Você não precisa de mais força de vontade.</span> Precisa de um sistema feito pro seu cérebro.</p>
+  </div>
+  <div class="swipe"><span class="arrow">→</span> deslize</div>
+  <div class="page-num">03 / 07</div>
+</div>
+
+<!-- SLIDE 4 — REVELAÇÃO -->
+<div class="slide s4">
+  <div class="glow tl"></div>
+  <div class="glow br"></div>
+  <div class="content">
+    <div class="tag">A VIRADA <span class="dot">•</span> 04</div>
+    <h1>O problema<br>não é você.<br><span class="accent">É o método.</span></h1>
+    <p class="reveal">Listas comuns, agendas "normais" e dicas genéricas <strong>falham com o cérebro TDAH</strong>. O que funciona é um sistema que respeita sua energia, seus picos de foco e sua forma de pensar.</p>
+  </div>
+  <div class="swipe"><span class="arrow">→</span> deslize</div>
+  <div class="page-num">04 / 07</div>
+</div>
+
+<!-- SLIDE 5 — SOLUÇÃO -->
+<div class="slide s5">
+  <div class="glow tl"></div>
+  <div class="glow br"></div>
+  <div class="content">
+    <div class="tag">A SOLUÇÃO <span class="dot">•</span> 05</div>
+    <h1>TDAH Descomplicado</h1>
+    <p class="intro">Um e-book direto ao ponto, pra você <strong>finalmente terminar o que começa</strong>.</p>
+    <div class="bonus-list">
+      <div class="bonus-item"><div class="bonus-check">✓</div>Foco em blocos de 25 min que respeitam seu cansaço</div>
+      <div class="bonus-item"><div class="bonus-check">✓</div>Planilha anti-procrastinação pronta pra usar</div>
+      <div class="bonus-item"><div class="bonus-check">✓</div>Áudios de resgate pra dias de cabeça cheia</div>
+      <div class="bonus-item"><div class="bonus-check">✓</div>Checklists que reduzem a sobrecarga mental</div>
+    </div>
+  </div>
+  <div class="swipe"><span class="arrow">→</span> deslize</div>
+  <div class="page-num">05 / 07</div>
+</div>
+
+<!-- SLIDE 6 — PROVA -->
+<div class="slide s6">
+  <div class="glow tl"></div>
+  <div class="glow br"></div>
+  <div class="content">
+    <div class="tag">PROVA REAL <span class="dot">•</span> 06</div>
+    <h1>Não é teoria.<br>É resultado.</h1>
+    <div class="stat-row">
+      <div class="stat"><div class="num">12.847</div><div class="lbl">pessoas já aplicaram o método</div></div>
+      <div class="stat"><div class="num">4.9★</div><div class="lbl">avaliação média</div></div>
+      <div class="stat"><div class="num">7 dias</div><div class="lbl">pra testar sem risco</div></div>
+    </div>
+    <div class="card" style="margin-top:42px;">
+      <div class="quote">"Pela primeira vez terminei a semana sem aquele peso de 'deixei tudo pra última hora'. Em 3 semanas mudou minha relação com o trabalho."</div>
+      <div class="quote-author">— Marina A., designer · leitora desde 2024</div>
+    </div>
+  </div>
+  <div class="swipe"><span class="arrow">→</span> deslize</div>
+  <div class="page-num">06 / 07</div>
+</div>
+
+<!-- SLIDE 7 — CTA -->
+<div class="slide s7">
+  <div class="glow tl"></div>
+  <div class="glow br"></div>
+  <div class="content">
+    <div class="tag">SUA VEZ <span class="dot">•</span> 07</div>
+    <h1>Para de empurrar com a barriga.<br><span class="accent">Começa hoje.</span></h1>
+    <p class="urgency">⚠ Oferta de lançamento — metade do preço</p>
+    <div class="price-box">
+      <span class="price-old">R$ 97</span>
+      <span class="price-new">R$ 47</span>
+      <span class="price-off">50% OFF</span>
+    </div>
+    <a href="https://pay.cakto.com.br/9u9w6q4_940459" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:block;"><div class="cta-button">QUERO DESCOMPLICAR →</div></a>
+    <div class="guarantee"><span class="shield">🛡️</span><span>Garantia incondicional de <strong>7 dias</strong>. Não serviu? devolvemos 100%.</span></div>
+    <div class="social-proof"><span class="stars">★★★★★</span><span>12.847 leitores · 4.9 / 5</span></div>
+  </div>
+  <div class="page-num">07 / 07</div>
+</div>
+
+</body>
+</html>

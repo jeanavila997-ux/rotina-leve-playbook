@@ -1,0 +1,16 @@
+sistema,categoria,uso_recomendado,prioridade
+OpenAI,IA e LLM,Apps SaaS de IA com visual limpo e premium,Alta
+Ollama,IA e LLM,Ferramentas locais de modelos e agentes,Alta
+Neon,Design visual,Landing pages e dashboards chamativos,Alta
+Shadcn,UI web,SaaS moderno em React/Next.js,Alta
+Vercel,Ferramentas dev,Landing pages e deploy de apps,Alta
+Supabase,Full-stack,Banco de dados e painéis admin,Alta
+Linear,Produtividade,CRM tarefas e gestão de projetos,Média
+Notion,Produtividade,Memória externa knowledge base e organização,Média
+Stripe,Pagamentos,Checkout e produto digital,Alta
+GitHub,Ferramentas dev,Apps de código automações e repositórios,Alta
+Figma,Design,Prototipagem e design criativo,Média
+Webflow,Design web,Landing pages comerciais,Média
+Canva,Marketing,Criativos e social posts,Média
+Dashboard,UI,Sistemas internos e KPIs,Alta
+Professional,UI,Consultorias e apps B2B,Alta

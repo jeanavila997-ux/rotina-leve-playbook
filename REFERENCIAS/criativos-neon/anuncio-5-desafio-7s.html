@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TDAH Descomplicado — Anúncio 5: Desafio de 7 Segundos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=STIX+Two+Text:ital,wght@0,400;0,700;0,900&family=Source+Code+Pro:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --neon-primary: #4F46E5;
+    --neon-secondary: #0EA5E9;
+    --neon-accent: #F43F5E;
+    --neon-yellow: #F59E0B;
+    --neon-surface: #FFFFFF;
+    --neon-text: #1E293B;
+    --neon-dark: #FAFBFD;
+  }
+
+  body {
+    background: #E2E8F0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 40px;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  .label {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 14px;
+    color: #64748B;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  .ad {
+    width: 1080px;
+    height: 1350px;
+    position: relative;
+    overflow: hidden;
+    background: var(--neon-dark);
+    color: var(--neon-text);
+    box-shadow: 0 10px 40px rgba(79, 70, 229, 0.08);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 70px 80px;
+    text-align: center;
+  }
+
+  .grid-bg {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(79, 70, 229, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(79, 70, 229, 0.04) 1px, transparent 1px);
+    background-size: 80px 80px;
+    z-index: 1;
+  }
+
+  .glow {
+    position: absolute;
+    top: -150px;
+    right: -150px;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(14, 165, 233, 0.05), transparent 70%);
+    filter: blur(60px);
+    z-index: 1;
+  }
+
+  .topo {
+    position: relative;
+    z-index: 2;
+    flex: 0 0 20%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+  }
+
+  .timer {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 56px;
+    font-weight: 700;
+    color: var(--neon-yellow);
+    letter-spacing: 4px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .timer-icon { font-size: 48px; }
+
+  .headline {
+    font-family: 'STIX Two Text', serif;
+    font-size: 52px;
+    font-weight: 900;
+    color: var(--neon-primary);
+    line-height: 1.1;
+  }
+
+  .subheadline {
+    font-size: 28px;
+    color: rgba(30, 41, 59, 0.7);
+  }
+
+  .centro {
+    position: relative;
+    z-index: 2;
+    flex: 0 0 50%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .quiz-card {
+    width: 100%;
+    max-width: 860px;
+    background: var(--neon-surface);
+    border: 2px solid var(--neon-primary);
+    border-radius: 28px;
+    padding: 54px;
+    box-shadow: 0 10px 30px rgba(79, 70, 229, 0.06);
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+  }
+
+  .question {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.35;
+    color: var(--neon-text);
+  }
+
+  .options {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .option {
+    padding: 22px 28px;
+    border: 2px solid #E2E8F0;
+    border-radius: 14px;
+    font-size: 26px;
+    font-weight: 500;
+    color: rgba(30, 41, 59, 0.8);
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .option-highlight {
+    border-color: var(--neon-accent);
+    background: rgba(244, 63, 94, 0.08);
+    color: var(--neon-text);
+    box-shadow: 0 4px 12px rgba(244, 63, 94, 0.2);
+    animation: pulse 1.8s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 4px 12px rgba(244, 63, 94, 0.2); }
+    50% { box-shadow: 0 6px 20px rgba(244, 63, 94, 0.4); }
+  }
+
+  .option-letter {
+    font-family: 'Source Code Pro', monospace;
+    font-weight: 700;
+    color: var(--neon-secondary);
+    margin-right: 12px;
+  }
+
+  .arrow { font-size: 24px; color: var(--neon-accent); }
+
+  .baixo {
+    position: relative;
+    z-index: 2;
+    flex: 0 0 30%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 28px;
+  }
+
+  .insight {
+    font-size: 30px;
+    line-height: 1.45;
+    color: rgba(30, 41, 59, 0.8);
+    max-width: 820px;
+  }
+
+  .insight strong {
+    color: var(--neon-text);
+  }
+
+  .cta-button {
+    padding: 26px 60px;
+    background: var(--neon-primary);
+    color: var(--neon-surface);
+    font-family: 'STIX Two Text', serif;
+    font-size: 32px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 18px;
+    box-shadow: 0 8px 30px rgba(79, 70, 229, 0.3);
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .microcopy {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 18px;
+    color: rgba(30, 41, 59, 0.5);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  @media print {
+    body { background: white; padding: 0; }
+    .label { display: none; }
+    .ad { border-radius: 0; box-shadow: none; page-break-after: always; }
+  }
+</style>
+</head>
+<body>
+
+<div class="label">ANÚNCIO 5 · DESAFIO DE 7 SEGUNDOS · 1080x1350px · Meta Ads / Instagram</div>
+
+<div class="ad">
+  <div class="grid-bg"></div>
+  <div class="glow"></div>
+
+  <div class="topo">
+    <div class="timer"><span class="timer-icon">⏱</span> 00:07</div>
+    <h1 class="headline">TESTE RÁPIDO DE TDAH</h1>
+    <p class="subheadline">7 segundos. 3 perguntas. Zero cadastro.</p>
+  </div>
+
+  <div class="centro">
+    <div class="quiz-card">
+      <p class="question">Quando você abre o celular pra fazer algo específico, quantas vezes acaba em outro app?</p>
+      <div class="options">
+        <div class="option"><span><span class="option-letter">A)</span> Raramente</span></span></div>
+        <div class="option"><span><span class="option-letter">B)</span> Às vezes</span></span></div>
+        <div class="option option-highlight">
+          <span><span class="option-letter">C)</span> QUASE SEMPRE</span>
+          <span class="arrow">←</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="baixo">
+    <p class="insight">
+      Se você marcou C, isso <strong>NÃO</strong> é "falta de disciplina".
+      <br>É como seu cérebro está wired. E tem como treinar.
+    </p>
+    <div class="cta-button">
+      Fazer teste completo · 90 segundos
+      <span>→</span>
+    </div>
+    <p class="microcopy">Grátis · Sem email necessário</p>
+  </div>
+</div>
+
+</body>
+</html>

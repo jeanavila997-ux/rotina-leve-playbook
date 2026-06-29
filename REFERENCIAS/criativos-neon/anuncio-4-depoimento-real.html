@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TDAH Descomplicado — Anúncio 4: Depoimento Real</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=STIX+Two+Text:ital,wght@0,400;0,700;0,900&family=Source+Code+Pro:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --neon-primary: #4F46E5;
+    --neon-secondary: #0EA5E9;
+    --neon-accent: #F43F5E;
+    --neon-surface: #FFFFFF;
+    --neon-text: #1E293B;
+    --neon-dark: #FAFBFD;
+  }
+
+  body {
+    background: #E2E8F0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 40px;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  .label {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 14px;
+    color: #64748B;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  .ad {
+    width: 1080px;
+    height: 1350px;
+    position: relative;
+    overflow: hidden;
+    background: var(--neon-dark);
+    color: var(--neon-text);
+    box-shadow: 0 10px 40px rgba(79, 70, 229, 0.08);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    padding: 70px;
+  }
+
+  .photo-bg {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(79, 70, 229, 0.05) 0%, rgba(250, 250, 253, 0.6) 60%, var(--neon-dark) 100%),
+                radial-gradient(circle at 30% 30%, rgba(14, 165, 233, 0.08), transparent 50%);
+    z-index: 1;
+  }
+
+  .person {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 700px;
+    height: 900px;
+    background: linear-gradient(180deg, rgba(79, 70, 229, 0.06) 0%, transparent 100%);
+    border-radius: 350px 350px 0 0;
+    z-index: 1;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .person::before {
+    content: '';
+    width: 320px;
+    height: 320px;
+    background: linear-gradient(135deg, rgba(79, 70, 229, 0.15), rgba(79, 70, 229, 0.02));
+    border-radius: 50%;
+    position: absolute;
+    top: 120px;
+    box-shadow: 0 4px 20px rgba(79, 70, 229, 0.1);
+  }
+
+  .person-silhouette {
+    font-size: 320px;
+    opacity: 0.15;
+    transform: translateY(40px);
+  }
+
+  .quote-box {
+    position: relative;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.95);
+    border: 2px solid var(--neon-secondary);
+    border-radius: 24px;
+    padding: 40px;
+    backdrop-filter: blur(8px);
+    max-width: 840px;
+    align-self: flex-start;
+    box-shadow: 0 10px 30px rgba(14, 165, 233, 0.08);
+  }
+
+  .quote {
+    font-family: 'STIX Two Text', serif;
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: var(--neon-primary);
+    margin-bottom: 22px;
+  }
+
+  .attribution {
+    font-size: 22px;
+    color: rgba(30, 41, 59, 0.7);
+  }
+
+  .headline-center {
+    position: relative;
+    z-index: 2;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .headline-center h2 {
+    font-family: 'STIX Two Text', serif;
+    font-size: 72px;
+    font-weight: 900;
+    color: var(--neon-text);
+  }
+
+  .bottom-panel {
+    position: relative;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 24px;
+    padding: 50px 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+    border: 1px solid rgba(79, 70, 229, 0.1);
+  }
+
+  .bullets {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+
+  .bullet {
+    font-size: 26px;
+    font-weight: 500;
+    color: var(--neon-primary);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .cta-button {
+    padding: 24px 60px;
+    background: var(--neon-secondary);
+    color: var(--neon-surface);
+    font-family: 'STIX Two Text', serif;
+    font-size: 30px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(14, 165, 233, 0.3);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .social-proof {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 17px;
+    color: rgba(30, 41, 59, 0.6);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .stars {
+    color: #FFD700;
+    font-size: 18px;
+  }
+
+  @media print {
+    body { background: white; padding: 0; }
+    .label { display: none; }
+    .ad { border-radius: 0; box-shadow: none; page-break-after: always; }
+  }
+</style>
+</head>
+<body>
+
+<div class="label">ANÚNCIO 4 · DEPOIMENTO REAL · 1080x1350px · Meta Ads / Instagram</div>
+
+<div class="ad">
+  <div class="photo-bg"></div>
+  <div class="person"><div class="person-silhouette">👤</div></div>
+
+  <div class="quote-box">
+    <p class="quote">"Eu tomei Ritalina por 6 anos. Funcionava. Mas eu não era EU — era uma versão robô de mim mesmo."</p>
+    <p class="attribution">— Marina, 29, designer</p>
+  </div>
+
+  <div class="headline-center">
+    <h2>Aí eu encontrei outra forma.</h2>
+  </div>
+
+  <div class="bottom-panel">
+    <div class="bullets">
+      <div class="bullet"><span>✓</span> Sem efeitos colaterais</div>
+      <div class="bullet"><span>✓</span> Sem "zumbi" no fim do dia</div>
+      <div class="bullet"><span>✓</span> Foco real, não químico</div>
+    </div>
+    <div class="cta-button">
+      Ver como a Marina fez
+      <span>→</span>
+    </div>
+    <div class="social-proof">
+      <span class="stars">★★★★★</span>
+      <span>4.9 · 12.847 avaliações</span>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

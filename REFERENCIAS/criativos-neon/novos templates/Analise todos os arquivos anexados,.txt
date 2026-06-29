@@ -1,0 +1,45 @@
+Analise todos os arquivos anexados, incluindo HTML, imagem, perfil de cliente, anúncio e capa do eBook.
+
+Crie um carrossel para Instagram com 8 slides, no formato vertical 1080x1350, estilo premium, moderno, educativo e persuasivo.
+
+Objetivo do carrossel:
+atrair atenção, explicar o tema de forma simples, gerar identificação com o público e conduzir para a venda do eBook.
+
+Estrutura dos slides:
+
+Slide 1:
+Capa com título forte, visual impactante e promessa clara.
+
+Slide 2:
+Apresente o problema principal do público.
+
+Slide 3:
+Mostre sintomas, dores ou dificuldades reais.
+
+Slide 4:
+Explique por que isso acontece de forma simples.
+
+Slide 5:
+Mostre uma solução prática.
+
+Slide 6:
+Apresente o eBook como guia organizado.
+
+Slide 7:
+Liste benefícios do eBook.
+
+Slide 8:
+CTA final para comprar, baixar ou acessar o link da bio.
+
+Regras visuais:
+- usar cores modernas e alto contraste
+- manter layout limpo
+- usar tipografia grande e legível
+- evitar excesso de texto
+- criar composição profissional para Instagram
+- manter consistência visual entre todos os slides
+- usar elementos gráficos relacionados ao tema dos arquivos
+- não inventar informações médicas perigosas
+- evitar promessas exageradas de cura ou resultado garantido
+
+Entregue o carrossel pronto para exportação em imagens individuais.

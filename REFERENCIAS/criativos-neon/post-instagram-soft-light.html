@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TDAH Descomplicado — Template Post Instagram Soft Light</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=STIX+Two+Text:ital,wght@0,400;0,700;1,400;1,700&family=Source+Code+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --panel-width: 320px;
+    --bg-app: #0F172A;
+    --text-app: #E2E8F0;
+    --surface-app: #1E293B;
+    --border-app: #334155;
+
+    /* Soft Light Design System */
+    --brand-primary: #4F46E5; /* Indigo */
+    --brand-secondary: #0EA5E9; /* Sky Blue */
+    --brand-accent: #F43F5E; /* Rose */
+    --brand-bg: #FAFBFD; /* Soft White */
+    --brand-surface: #FFFFFF; /* White */
+    --brand-text: #1E293B; /* Slate */
+  }
+
+  body {
+    background: var(--bg-app);
+    color: var(--text-app);
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  .app-sidebar {
+    width: var(--panel-width);
+    background: var(--surface-app);
+    border-right: 1px solid var(--border-app);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-y: auto;
+    z-index: 10;
+  }
+
+  .app-main {
+    margin-left: var(--panel-width);
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .brand-logo {
+    font-size: 18px;
+    font-weight: 700;
+    color: #FFF;
+    border-bottom: 1px solid var(--border-app);
+    padding-bottom: 15px;
+  }
+
+  .control-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .control-group label {
+    font-size: 13px;
+    font-family: 'Source Code Pro', monospace;
+    color: #94A3B8;
+  }
+
+  .control-group select {
+    background: #0F172A;
+    border: 1px solid var(--border-app);
+    color: #FFF;
+    padding: 10px;
+    border-radius: 6px;
+    font-family: inherit;
+    outline: none;
+  }
+
+  /* === CANVAS LAYOUT === */
+  .mockup-container {
+    width: 100%;
+    max-width: 500px;
+    aspect-ratio: 1080 / 1350;
+    background: #000;
+    border-radius: 32px;
+    padding: 8px;
+    box-shadow: 0 20px 45px rgba(0,0,0,0.35);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mockup-screen {
+    width: 100%;
+    height: 100%;
+    border-radius: 24px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .post-canvas {
+    width: 1080px;
+    height: 1350px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.44); /* Fallback scale */
+    transform-origin: center center;
+    background: var(--brand-bg);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    padding: 80px;
+  }
+
+  /* DESIGN PRESETS (Layouts) */
+  .layout-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Layout 1: Quote / Tip */
+  .layout-quote {
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .layout-quote .badge {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--brand-primary);
+    background: var(--brand-surface);
+    padding: 12px 24px;
+    border-radius: 99px;
+    border: 1.5px solid rgba(79, 70, 229, 0.15);
+    margin-bottom: 40px;
+    letter-spacing: 1.5px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+  }
+
+  .layout-quote .headline {
+    font-family: 'STIX Two Text', serif;
+    font-size: 82px;
+    font-weight: 700;
+    line-height: 1.15;
+    color: var(--brand-text);
+    margin-bottom: 30px;
+  }
+
+  .layout-quote .headline span {
+    color: var(--brand-primary);
+    position: relative;
+  }
+
+  .layout-quote .headline span::after {
+    content: '';
+    position: absolute;
+    bottom: 8px;
+    left: 0;
+    width: 100%;
+    height: 12px;
+    background: rgba(14, 165, 233, 0.2);
+    z-index: -1;
+  }
+
+  .layout-quote .body-text {
+    font-family: 'Roboto', sans-serif;
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #475569;
+    max-width: 850px;
+  }
+
+  .author-block {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: auto;
+  }
+
+  .author-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: var(--brand-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFF;
+    font-size: 30px;
+  }
+
+  .author-info .name {
+    font-family: 'STIX Two Text', serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--brand-text);
+  }
+
+  .author-info .handle {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 18px;
+    color: var(--brand-secondary);
+  }
+
+  /* Action Buttons */
+  .action-btn {
+    background: var(--brand-primary);
+    color: #FFF;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    text-align: center;
+    margin-top: auto;
+  }
+
+  /* Aspect Ratio Adjustments */
+  .aspect-45 .mockup-container { aspect-ratio: 1080 / 1350; }
+  .aspect-45 .post-canvas { width: 1080px; height: 1350px; }
+
+  .aspect-11 .mockup-container { aspect-ratio: 1080 / 1080; }
+  .aspect-11 .post-canvas { width: 1080px; height: 1080px; }
+  .aspect-11 .layout-quote .headline { font-size: 72px; }
+
+  .aspect-916-story .mockup-container,
+  .aspect-916-reels .mockup-container { aspect-ratio: 1080 / 1920; }
+  .aspect-916-story .post-canvas,
+  .aspect-916-reels .post-canvas { width: 1080px; height: 1920px; padding: 220px 80px; }
+  .aspect-916-story .layout-quote .headline,
+  .aspect-916-reels .layout-quote .headline { font-size: 88px; }
+
+  .aspect-34 .mockup-container { aspect-ratio: 1080 / 1440; }
+  .aspect-34 .post-canvas { width: 1080px; height: 1440px; }
+
+  .aspect-profile .mockup-container { aspect-ratio: 1080 / 1080; }
+  .aspect-profile .post-canvas { 
+    width: 1080px; 
+    height: 1080px; 
+    justify-content: center; 
+    align-items: center; 
+    text-align: center; 
+    padding: 140px; 
+  }
+  .aspect-profile .layout-quote { align-items: center; }
+  .aspect-profile .layout-quote .headline { font-size: 56px; text-align: center; margin-bottom: 20px; }
+  .aspect-profile .layout-quote .body-text { font-size: 24px; text-align: center; max-width: 100%; }
+  .aspect-profile .layout-quote .badge { margin-bottom: 30px; font-size: 16px; }
+  .aspect-profile .author-block { display: none; }
+
+  /* Safe Zone Overlays */
+  .profile-guide {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 6px dashed var(--brand-primary);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 100;
+    box-sizing: border-box;
+  }
+
+  .safe-zone-overlay {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 100;
+  }
+
+  /* Show overlays only when aspect is selected AND toggle is checked */
+  body.show-guides.aspect-profile .profile-guide {
+    display: block;
+  }
+  
+  body.show-guides.aspect-916-story .story-safe-overlay {
+    display: block;
+  }
+
+  body.show-guides.aspect-916-reels .reels-safe-overlay {
+    display: block;
+  }
+
+  /* Safe Zone Styling */
+  .safe-top, .safe-bottom, .reels-right, .reels-bottom {
+    position: absolute;
+    background: rgba(244, 63, 94, 0.15);
+    border: 2px dashed #F43F5E;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #F43F5E;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  .safe-top {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 180px; /* ~10% top area for Stories */
+    border-top: none;
+    border-left: none;
+    border-right: none;
+  }
+
+  .safe-bottom {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 240px; /* ~12% bottom area for Stories interactive bar */
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+  }
+
+  .reels-right {
+    top: 0;
+    right: 0;
+    width: 160px; /* Right column buttons in Reels */
+    height: 100%;
+    border-right: none;
+    border-top: none;
+    border-bottom: none;
+  }
+
+  .reels-bottom {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 380px; /* Bottom description/username area in Reels */
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+  }
+
+  .safe-label {
+    background: rgba(254, 226, 226, 0.9);
+    padding: 4px 12px;
+    border-radius: 4px;
+    border: 1px solid #F43F5E;
+  }
+
+  .safe-label.vertical {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transform: rotate(180deg);
+  }
+
+  @media print {
+    body { background: #FFF !important; color: #000 !important; }
+    .app-sidebar, .preview-header, .safe-zone-overlay, .profile-guide { display: none !important; }
+    .app-main { margin-left: 0 !important; padding: 0 !important; align-items: flex-start; }
+    .mockup-container {
+      max-width: none !important;
+      border-radius: 0 !important;
+      padding: 0 !important;
+      background: none !important;
+      box-shadow: none !important;
+      width: 1080px !important;
+    }
+    .post-canvas {
+      transform: none !important;
+      position: relative !important;
+      top: 0 !important;
+      left: 0 !important;
+    }
+    body.print-aspect-45 .mockup-container { height: 1350px !important; }
+    body.print-aspect-11 .mockup-container { height: 1080px !important; }
+    body.print-aspect-916-story .mockup-container { height: 1920px !important; }
+    body.print-aspect-916-reels .mockup-container { height: 1920px !important; }
+    body.print-aspect-profile .mockup-container { height: 1080px !important; }
+    body.print-aspect-34 .mockup-container { height: 1440px !important; }
+  }
+</style>
+</head>
+<body>
+
+  <aside class="app-sidebar">
+    <div class="brand-logo">📸 Post Editor (Soft Light)</div>
+    
+    <div class="control-group">
+      <label>Formato</label>
+      <select id="aspect-select">
+        <option value="45">Post Vertical (1080x1350 - 4:5)</option>
+        <option value="11">Post Quadrado (1080x1080 - 1:1)</option>
+        <option value="916-story">Instagram Story (1080x1920 - 9:16)</option>
+        <option value="916-reels">Vídeo Reels (1080x1920 - 9:16)</option>
+        <option value="profile">Foto de Perfil (1080x1080 Círculo)</option>
+        <option value="34">Post Instagram (1080x1440 - 3:4)</option>
+      </select>
+    </div>
+
+    <div class="control-group" id="guide-toggle-group">
+      <label style="display: flex; align-items: center; gap: 8px; cursor: pointer; color: #E2E8F0; font-family: inherit; font-size: 14px;">
+        <input type="checkbox" id="guide-toggle" checked style="width: 16px; height: 16px; accent-color: var(--brand-primary);">
+        Mostrar Guias de Área Segura
+      </label>
+    </div>
+
+    <div id="profile-note" style="display: none; font-size: 12px; color: #94A3B8; background: rgba(79, 70, 229, 0.1); border-left: 3px solid var(--brand-primary); padding: 10px; border-radius: 4px; line-height: 1.4; font-family: sans-serif;">
+      ℹ️ <strong>Nota:</strong> A imagem final exportada será quadrada. O círculo indica a área de corte do Instagram.
+    </div>
+
+    <button class="action-btn" id="export-png-btn" style="background: var(--brand-secondary); margin-top: 10px;">Baixar PNG</button>
+    <button class="action-btn" id="export-btn">Salvar como PDF</button>
+  </aside>
+
+  <main class="app-main">
+    <div class="mockup-container aspect-45" id="mockup">
+      <div class="mockup-screen">
+        <div class="post-canvas" id="canvas">
+          <!-- Guias de Segurança / Safe Zones -->
+          <div class="profile-guide" data-html2canvas-ignore="true"></div>
+          
+          <div class="safe-zone-overlay story-safe-overlay" data-html2canvas-ignore="true">
+            <div class="safe-top">
+              <span class="safe-label">Interface Superior do Story</span>
+            </div>
+            <div class="safe-bottom">
+              <span class="safe-label">Barra de Mensagem do Story</span>
+            </div>
+          </div>
+
+          <div class="safe-zone-overlay reels-safe-overlay" data-html2canvas-ignore="true">
+            <div class="reels-right">
+              <span class="safe-label vertical">Botões Laterais Reels</span>
+            </div>
+            <div class="reels-bottom">
+              <span class="safe-label">Descrição & Legenda Reels</span>
+            </div>
+          </div>
+
+          <div class="layout-wrapper layout-quote">
+            <div class="badge" contenteditable="true">TDAH DESCOMPLICADO</div>
+            
+            <h1 class="headline" contenteditable="true">
+              Você não é preguiçoso. Seu sistema atual de produtividade <span>foi feito para outra pessoa.</span>
+            </h1>
+            
+            <p class="body-text" contenteditable="true">
+              Ferramentas corporativas tradicionais exigem que você adapte o seu cérebro à ferramenta. O segredo é usar ferramentas que se adaptam ao seu cérebro.
+            </p>
+
+            <div class="author-block">
+              <div class="author-avatar">✨</div>
+              <div class="author-info">
+                <div class="name" contenteditable="true">TDAH Descomplicado</div>
+                <div class="handle" contenteditable="true">@tdahdescomplicado</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    const aspectSelect = document.getElementById('aspect-select');
+    const guideToggle = document.getElementById('guide-toggle');
+    const mockup = document.getElementById('mockup');
+    const canvas = document.getElementById('canvas');
+    const profileNote = document.getElementById('profile-note');
+
+    function scaleCanvas() {
+      const containerWidth = mockup.clientWidth - 16;
+      const containerHeight = mockup.clientHeight - 16;
+      const canvasWidth = 1080;
+      const canvasHeight = canvas.offsetHeight;
+      
+      const scaleX = containerWidth / canvasWidth;
+      const scaleY = containerHeight / canvasHeight;
+      const scale = Math.min(scaleX, scaleY);
+      
+      canvas.style.transform = `translate(-50%, -50%) scale(${scale})`;
+    }
+
+    function updateBodyClasses() {
+      // Clear previous classes
+      document.body.className = '';
+      
+      const aspect = aspectSelect.value;
+      document.body.classList.add(`aspect-${aspect}`);
+      
+      // Update mockup container class
+      mockup.className = 'mockup-container';
+      mockup.classList.add(`aspect-${aspect}`);
+      
+      if (guideToggle.checked) {
+        document.body.classList.add('show-guides');
+      }
+      
+      // Show/hide profile note
+      if (aspect === 'profile') {
+        profileNote.style.display = 'block';
+      } else {
+        profileNote.style.display = 'none';
+      }
+      
+      scaleCanvas();
+    }
+
+    aspectSelect.addEventListener('change', updateBodyClasses);
+    guideToggle.addEventListener('change', updateBodyClasses);
+
+    window.addEventListener('resize', scaleCanvas);
+    window.addEventListener('load', () => {
+      updateBodyClasses();
+      setTimeout(scaleCanvas, 100);
+    });
+    document.fonts.ready.then(scaleCanvas);
+
+    // PNG EXPORT FUNCTION
+    document.getElementById('export-png-btn').addEventListener('click', () => {
+      const canvasEl = document.getElementById('canvas');
+      const originalTransform = canvasEl.style.transform;
+      
+      // Temporarily remove absolute scaling for html2canvas
+      canvasEl.style.transform = 'none';
+      canvasEl.style.position = 'relative';
+      canvasEl.style.top = '0';
+      canvasEl.style.left = '0';
+      
+      html2canvas(canvasEl, {
+        useCORS: true,
+        scale: 1, // Render at actual resolution
+        logging: false,
+        backgroundColor: '#FAFBFD' // Force standard soft-white background color
+      }).then(renderedCanvas => {
+        // Restore styling
+        canvasEl.style.transform = originalTransform;
+        canvasEl.style.position = 'absolute';
+        canvasEl.style.top = '50%';
+        canvasEl.style.left = '50%';
+        
+        // Trigger download
+        const link = document.createElement('a');
+        const aspectName = aspectSelect.value;
+        link.download = `criativo-tdah-${aspectName}-${Date.now()}.png`;
+        link.href = renderedCanvas.toDataURL('image/png');
+        link.click();
+        
+        scaleCanvas();
+      }).catch(err => {
+        console.error('Erro na exportação PNG:', err);
+        alert('Erro ao exportar PNG. Tente exportar em PDF usando a opção do navegador.');
+        // Restore styling in case of error
+        canvasEl.style.transform = originalTransform;
+        canvasEl.style.position = 'absolute';
+        canvasEl.style.top = '50%';
+        canvasEl.style.left = '50%';
+        scaleCanvas();
+      });
+    });
+
+    // PDF PRINT EXPORT
+    document.getElementById('export-btn').addEventListener('click', () => {
+      const aspect = aspectSelect.value;
+      document.body.classList.add(`print-aspect-${aspect}`);
+      window.print();
+      document.body.classList.remove(`print-aspect-${aspect}`);
+    });
+  </script>
+</body>
+</html>

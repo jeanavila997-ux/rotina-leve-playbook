@@ -1,0 +1,54 @@
+# Dependências
+node_modules/
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Ambiente e configurações locais
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor / IDE
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+*.swp
+*.swo
+*~
+.idea/
+
+# Build e artefatos temporários
+dist/
+build/
+.cache/
+*.tmp
+*.temp
+
+# Arquivos de exportação/export
+*.pdf
+*.png
+*.jpg
+*.jpeg
+*.webp
+*.svg
+
+# Capturas de tela geradas para preview
+omp-sshots-*/
+
+# Miscelânea
+*.bak
+*.orig

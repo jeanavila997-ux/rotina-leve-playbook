@@ -31,13 +31,13 @@ A landing em `landing/index.html` é uma página de vendas completa, responsiva 
 
 ```bash
 cd rotina-leve-playbook
-python -m http.server 3000
+python -m http.server 8000
 ```
 
 Abra:
 
 ```text
-http://localhost:3000/landing
+http://localhost:8000/landing
 ```
 
 ### Publicar (GitHub Pages)

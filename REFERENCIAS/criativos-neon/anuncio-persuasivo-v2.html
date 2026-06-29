@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TDAH Descomplicado — Anúncio Persuasivo V2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=STIX+Two+Text:ital,wght@0,400;0,700;0,900&family=Source+Code+Pro:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --neon-primary: #4F46E5;
+    --neon-secondary: #0EA5E9;
+    --neon-accent: #F43F5E;
+    --neon-purple: #818CF8;
+    --neon-surface: #FFFFFF;
+    --neon-text: #1E293B;
+    --neon-dark: #FAFBFD;
+    --neon-muted: #64748B;
+  }
+
+  body {
+    background: #E2E8F0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 40px;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  .label {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 13px;
+    color: var(--neon-muted);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  .ad {
+    width: 1080px;
+    height: 1350px;
+    position: relative;
+    overflow: hidden;
+    background: var(--neon-dark);
+    color: var(--neon-text);
+    box-shadow: 0 12px 50px rgba(79,70,229,0.12);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 70px 80px;
+  }
+
+  .glow-1 {
+    position: absolute; top: -200px; right: -200px;
+    width: 720px; height: 720px;
+    background: radial-gradient(circle, rgba(129,140,248,0.10), transparent 70%);
+    filter: blur(80px); z-index: 0;
+  }
+  .glow-2 {
+    position: absolute; bottom: -220px; left: -220px;
+    width: 720px; height: 720px;
+    background: radial-gradient(circle, rgba(14,165,233,0.08), transparent 70%);
+    filter: blur(80px); z-index: 0;
+  }
+
+  .top { position: relative; z-index: 2; display: flex; flex-direction: column; gap: 24px; }
+
+  .badge {
+    align-self: flex-start;
+    background: var(--neon-accent);
+    color: #fff;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    padding: 12px 22px;
+    border-radius: 10px;
+    text-transform: uppercase;
+    box-shadow: 0 8px 24px rgba(244,63,94,0.30);
+  }
+
+  .headline {
+    font-family: 'STIX Two Text', serif;
+    font-size: 76px;
+    font-weight: 900;
+    line-height: 1.05;
+    color: var(--neon-text);
+  }
+  .headline .hl { color: var(--neon-primary); }
+  .headline .strike { text-decoration: line-through; text-decoration-color: var(--neon-accent); text-decoration-thickness: 6px; }
+
+  .sub {
+    font-size: 30px;
+    line-height: 1.5;
+    color: rgba(30,41,59,0.82);
+    margin-top: 6px;
+  }
+  .sub strong { color: var(--neon-text); font-weight: 700; }
+
+  .proof-list {
+    position: relative; z-index: 2;
+    margin-top: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .proof-item {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    font-size: 26px;
+    color: var(--neon-text);
+    font-weight: 500;
+    background: rgba(255,255,255,0.6);
+    border: 1px solid rgba(79,70,229,0.12);
+    padding: 18px 24px;
+    border-radius: 14px;
+  }
+  .proof-check {
+    width: 42px; height: 42px;
+    border-radius: 12px;
+    background: var(--neon-primary);
+    color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px; font-weight: 900;
+    flex-shrink: 0;
+  }
+
+  .offer {
+    position: relative; z-index: 2;
+    margin-top: 28px;
+    background: linear-gradient(135deg, #FFFFFF, #F5F7FF);
+    border: 2px solid rgba(79,70,229,0.18);
+    border-radius: 22px;
+    padding: 32px 36px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+  }
+  .offer-left { display: flex; flex-direction: column; gap: 6px; }
+  .offer-label { font-family: 'Source Code Pro', monospace; font-size: 16px; color: var(--neon-muted); letter-spacing: 2px; text-transform: uppercase; }
+  .offer-price { display: flex; align-items: baseline; gap: 14px; }
+  .offer-old { font-size: 30px; color: var(--neon-muted); text-decoration: line-through; }
+  .offer-new { font-family: 'STIX Two Text', serif; font-size: 64px; font-weight: 900; color: var(--neon-primary); line-height: 1; }
+  .offer-right {
+    background: var(--neon-accent);
+    color: #fff;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 22px;
+    font-weight: 700;
+    padding: 16px 22px;
+    border-radius: 12px;
+    text-align: center;
+    line-height: 1.3;
+  }
+  .offer-right small { display: block; font-size: 14px; opacity: 0.9; }
+
+  .cta-row {
+    position: relative; z-index: 2;
+    margin-top: 26px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .cta-button {
+    background: var(--neon-primary);
+    color: #fff;
+    font-family: 'STIX Two Text', serif;
+    font-weight: 900;
+    font-size: 38px;
+    padding: 30px 40px;
+    border-radius: 22px;
+    text-align: center;
+    box-shadow: 0 14px 40px rgba(79,70,229,0.35);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .urgency-line {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 18px;
+    color: var(--neon-accent);
+    text-align: center;
+    letter-spacing: 2px;
+    font-weight: 700;
+  }
+
+  .footer-proof {
+    position: relative; z-index: 2;
+    margin-top: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 18px;
+    color: var(--neon-muted);
+  }
+  .stars { color: #FFD700; font-size: 22px; letter-spacing: 2px; }
+
+  @media print {
+    body { background: white; padding: 0; }
+    .label { display: none; }
+    .ad { border-radius: 0; box-shadow: none; page-break-after: always; }
+  }
+</style>
+</head>
+<body>
+
+<div class="label">ANÚNCIO PERSUASIVO V2 · 1080x1350px · META ADS / INSTAGRAM</div>
+
+<div class="ad">
+  <div class="glow-1"></div>
+  <div class="glow-2"></div>
+
+  <div class="top">
+    <span class="badge">⚠ PARE DE PROCRASTINAR AGORA</span>
+    <h1 class="headline">
+      Você não é <span class="strike">preguiçoso</span>.<br>
+      Seu cérebro precisa de <span class="hl">outro método</span>.
+    </h1>
+    <p class="sub">O e-book que está ajudando <strong>12.847 pessoas</strong> com TDAH a <strong>terminarem o que começam</strong> — sem culpa, sem cobrança, sem "tentar mais forte".</p>
+  </div>
+
+  <div class="proof-list">
+    <div class="proof-item"><div class="proof-check">✓</div>Foco em blocos que respeitam seu cansaço</div>
+    <div class="proof-item"><div class="proof-check">✓</div>Rotina anti-procrastinação pronta pra usar</div>
+    <div class="proof-item"><div class="proof-check">✓</div>Áudios de resgate pra dias de cabeça cheia</div>
+    <div class="proof-item"><div class="proof-check">✓</div>Garantia incondicional de 7 dias</div>
+  </div>
+
+  <div class="offer">
+    <div class="offer-left">
+      <span class="offer-label">E-book + Bônus</span>
+      <div class="offer-price">
+        <span class="offer-old">R$ 97</span>
+        <span class="offer-new">R$ 47</span>
+      </div>
+    </div>
+    <div class="offer-right">50%<small>OFF LANÇAMENTO</small></div>
+  </div>
+
+  <div class="cta-row">
+    <a href="https://pay.cakto.com.br/9u9w6q4_940459" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:block;"><div class="cta-button">QUERO DESCOMPLICAR →</div></a>
+    <div class="urgency-line">OFERTA POR TEMPO LIMITADO · ACESSO IMEDIATO</div>
+  </div>
+
+  <div class="footer-proof">
+    <span class="stars">★★★★★</span>
+    <span>4.9 / 5 · 12.847 leitores</span>
+  </div>
+</div>
+
+</body>
+</html>

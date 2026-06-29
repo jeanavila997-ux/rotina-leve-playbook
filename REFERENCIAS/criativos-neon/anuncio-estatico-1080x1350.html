@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TDAH Descomplicado — Anúncio Estático 1080x1350</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=STIX+Two+Text:ital,wght@0,400;0,700;0,900&family=Source+Code+Pro:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --neon-primary: #4F46E5;
+    --neon-secondary: #0EA5E9;
+    --neon-accent: #F43F5E;
+    --neon-surface: #FFFFFF;
+    --neon-text: #1E293B;
+    --neon-dark: #FAFBFD;
+  }
+
+  body {
+    background: #E2E8F0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 40px;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  .label {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 14px;
+    color: #64748B;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  .ad-container {
+    display: flex;
+    gap: 40px;
+  }
+
+  .ad {
+    width: 1080px;
+    height: 1350px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(79, 70, 229, 0.08);
+    border-radius: 8px;
+  }
+
+  /* === AD VARIANT A: INDIGO FOCUS === */
+  .ad-a {
+    background: var(--neon-dark);
+    color: var(--neon-text);
+    padding: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .ad-a .glow-1 {
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(79, 70, 229, 0.08), transparent 70%);
+    filter: blur(50px);
+  }
+
+  .ad-a .glow-2 {
+    position: absolute;
+    bottom: -150px;
+    left: -150px;
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(circle, rgba(14, 165, 233, 0.05), transparent 70%);
+    filter: blur(60px);
+  }
+
+  .ad-a .header-row {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .ad-a .brand-badge {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .ad-a .brand-badge .logo {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    background: var(--neon-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'STIX Two Text', serif;
+    font-size: 26px;
+    font-weight: 900;
+    color: var(--neon-surface);
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+  }
+
+  .ad-a .brand-badge .name {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--neon-text);
+  }
+
+  .ad-a .discount-tag {
+    padding: 10px 20px;
+    border: 2px solid var(--neon-secondary);
+    border-radius: 999px;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--neon-secondary);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    box-shadow: 0 4px 12px rgba(14, 165, 233, 0.15);
+  }
+
+  .ad-a .headline {
+    position: relative;
+    z-index: 2;
+  }
+
+  .ad-a .headline .tag {
+    display: inline-block;
+    padding: 8px 18px;
+    border: 2px solid var(--neon-primary);
+    border-radius: 999px;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--neon-primary);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 28px;
+  }
+
+  .ad-a .headline h1 {
+    font-family: 'STIX Two Text', serif;
+    font-size: 88px;
+    font-weight: 900;
+    line-height: 1.05;
+    color: var(--neon-text);
+    margin-bottom: 24px;
+  }
+
+  .ad-a .headline h1 .green {
+    color: var(--neon-primary);
+  }
+
+  .ad-a .headline .sub {
+    font-size: 28px;
+    font-weight: 300;
+    color: rgba(30, 41, 59, 0.7);
+    line-height: 1.4;
+    max-width: 700px;
+  }
+
+  .ad-a .benefits {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .ad-a .benefit {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 18px 22px;
+    background: rgba(79, 70, 229, 0.04);
+    border: 1px solid rgba(79, 70, 229, 0.15);
+    border-radius: 14px;
+  }
+
+  .ad-a .benefit .check {
+    color: var(--neon-primary);
+    font-size: 24px;
+    flex-shrink: 0;
+  }
+
+  .ad-a .benefit span {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--neon-text);
+  }
+
+  .ad-a .cta-block {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .ad-a .price-row {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+  }
+
+  .ad-a .price-row .old {
+    font-size: 32px;
+    color: rgba(30, 41, 59, 0.4);
+    text-decoration: line-through;
+  }
+
+  .ad-a .price-row .new {
+    font-family: 'STIX Two Text', serif;
+    font-size: 80px;
+    font-weight: 900;
+    color: var(--neon-text);
+  }
+
+  .ad-a .price-row .currency {
+    font-size: 40px;
+    font-weight: 700;
+    color: var(--neon-text);
+  }
+
+  .ad-a .cta-button {
+    padding: 24px 70px;
+    background: var(--neon-primary);
+    color: var(--neon-surface);
+    font-family: 'STIX Two Text', serif;
+    font-size: 30px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    border-radius: 18px;
+    box-shadow: 0 8px 30px rgba(79, 70, 229, 0.3);
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .ad-a .trust {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 16px;
+    color: rgba(30, 41, 59, 0.5);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  .ad-a .trust .check {
+    color: var(--neon-primary);
+  }
+
+  /* === AD VARIANT B: SKY CALM === */
+  .ad-b {
+    background: var(--neon-surface);
+    color: var(--neon-text);
+    padding: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .ad-b .glow-b1 {
+    position: absolute;
+    top: -120px;
+    left: -120px;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(79, 70, 229, 0.08), transparent 70%);
+    filter: blur(40px);
+  }
+
+  .ad-b .glow-b2 {
+    position: absolute;
+    bottom: -100px;
+    right: -100px;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(14, 165, 233, 0.06), transparent 70%);
+    filter: blur(40px);
+  }
+
+  .ad-b .header-row {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .ad-b .brand-badge {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .ad-b .brand-badge .logo {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    background: var(--neon-text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'STIX Two Text', serif;
+    font-size: 26px;
+    font-weight: 900;
+    color: var(--neon-secondary);
+  }
+
+  .ad-b .brand-badge .name {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--neon-text);
+  }
+
+  .ad-b .discount-tag {
+    padding: 10px 20px;
+    background: var(--neon-text);
+    border-radius: 999px;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--neon-secondary);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  .ad-b .headline {
+    position: relative;
+    z-index: 2;
+  }
+
+  .ad-b .headline .tag {
+    display: inline-block;
+    padding: 8px 18px;
+    background: var(--neon-primary);
+    border-radius: 999px;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--neon-surface);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 28px;
+  }
+
+  .ad-b .headline h1 {
+    font-family: 'STIX Two Text', serif;
+    font-size: 88px;
+    font-weight: 900;
+    line-height: 1.05;
+    color: var(--neon-text);
+    margin-bottom: 24px;
+  }
+
+  .ad-b .headline h1 .underline-neon {
+    position: relative;
+  }
+
+  .ad-b .headline h1 .underline-neon::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    background: var(--neon-secondary);
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(14, 165, 233, 0.4);
+  }
+
+  .ad-b .headline .sub {
+    font-size: 28px;
+    font-weight: 300;
+    color: rgba(30, 41, 59, 0.6);
+    line-height: 1.4;
+    max-width: 700px;
+  }
+
+  .ad-b .struggle-list {
+    position: relative;
+    z-index: 2;
+    list-style: none;
+  }
+
+  .ad-b .struggle-list li {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 26px;
+    font-weight: 400;
+    color: var(--neon-text);
+    padding: 16px 0;
+    border-bottom: 2px solid rgba(17, 24, 39, 0.08);
+  }
+
+  .ad-b .struggle-list li .x {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #F43F5E;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 900;
+    flex-shrink: 0;
+  }
+
+  .ad-b .struggle-list li:last-child {
+    border-bottom: none;
+  }
+
+  .ad-b .cta-block {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .ad-b .price-row {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+  }
+
+  .ad-b .price-row .old {
+    font-size: 32px;
+    color: rgba(30, 41, 59, 0.35);
+    text-decoration: line-through;
+  }
+
+  .ad-b .price-row .new {
+    font-family: 'STIX Two Text', serif;
+    font-size: 80px;
+    font-weight: 900;
+    color: var(--neon-text);
+  }
+
+  .ad-b .price-row .currency {
+    font-size: 40px;
+    font-weight: 700;
+    color: var(--neon-text);
+  }
+
+  .ad-b .cta-button {
+    padding: 24px 70px;
+    background: var(--neon-primary);
+    color: var(--neon-surface);
+    font-family: 'STIX Two Text', serif;
+    font-size: 30px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    border-radius: 18px;
+    box-shadow: 0 8px 30px rgba(79, 70, 229, 0.3);
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .ad-b .trust {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 16px;
+    color: rgba(30, 41, 59, 0.4);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  .ad-b .trust .check {
+    color: #16A34A;
+  }
+
+  @media print {
+    body { background: white; padding: 0; }
+    .label { display: none; }
+    .ad { border-radius: 0; box-shadow: none; page-break-after: always; }
+    .ad-container { gap: 0; flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<div class="label">2 VARIANTES · 1080x1350px · Formato vertical para Meta Ads / Instagram</div>
+
+<div class="ad-container">
+
+  <!-- VARIANTE A: DARK NEON -->
+  <div class="ad ad-a">
+    <div class="glow-1"></div>
+    <div class="glow-2"></div>
+
+    <div class="header-row">
+      <div class="brand-badge">
+        <div class="logo">TD</div>
+        <div class="name">TDAH Descomplicado</div>
+      </div>
+      <div class="discount-tag">50% OFF</div>
+    </div>
+
+    <div class="headline">
+      <div class="tag">🧠 Sistema Neuro-Compatível</div>
+      <h1>Pare de se culpar.<br>Sua mente não é<br><span class="green">máquina fria.</span></h1>
+      <p class="sub">O primeiro sistema de produtividade desenhado do zero para mentes aceleradas com TDAH.</p>
+    </div>
+
+    <div class="benefits">
+      <div class="benefit">
+        <span class="check">✓</span>
+        <span>Leitura em 5 min</span>
+      </div>
+      <div class="benefit">
+        <span class="check">✓</span>
+        <span>Acesso vitalício</span>
+      </div>
+      <div class="benefit">
+        <span class="check">✓</span>
+        <span>Modelos prontos</span>
+      </div>
+      <div class="benefit">
+        <span class="check">✓</span>
+        <span>Garantia 7 dias</span>
+      </div>
+    </div>
+
+    <div class="cta-block">
+      <div class="price-row">
+        <span class="old">R$ 97</span>
+        <span class="currency">R$</span>
+        <span class="new">47</span>
+      </div>
+      <div class="cta-button">Garantir Meu Kit →</div>
+      <div class="trust">
+        <span class="check">✓</span> 7 dias de garantia · <span class="check">✓</span> Pix · <span class="check">✓</span> Cartão
+      </div>
+    </div>
+  </div>
+
+  <!-- VARIANTE B: LIGHT NEON -->
+  <div class="ad ad-b">
+    <div class="glow-b1"></div>
+    <div class="glow-b2"></div>
+
+    <div class="header-row">
+      <div class="brand-badge">
+        <div class="logo">TD</div>
+        <div class="name">TDAH Descomplicado</div>
+      </div>
+      <div class="discount-tag">50% OFF</div>
+    </div>
+
+    <div class="headline">
+      <div class="tag">⚡ Atrito Zero</div>
+      <h1>Sua agenda<br>não foi feita<br><span class="underline-neon">para você.</span></h1>
+      <p class="sub">Agendas tradicionais foram feitas por pessoas neurotípicas. O TDAH Descomplicado joga a favor da sua química cerebral.</p>
+    </div>
+
+    <ul class="struggle-list">
+      <li><span class="x">✕</span> Esquece reuniões importantes</li>
+      <li><span class="x">✕</span> Abre 30 abas e não começa</li>
+      <li><span class="x">✕</span> Trava diante de tarefas grandes</li>
+      <li><span class="x">✕</span> Perde chaves e documentos</li>
+      <li><span class="x">✕</span> Colapsa após hiperfoco forçado</li>
+    </ul>
+
+    <div class="cta-block">
+      <div class="price-row">
+        <span class="old">R$ 97</span>
+        <span class="currency">R$</span>
+        <span class="new">47</span>
+      </div>
+      <div class="cta-button">Garantir Meu Kit →</div>
+      <div class="trust">
+        <span class="check">✓</span> Garantia 7 dias · <span class="check">✓</span> Acesso imediato · <span class="check">✓</span> Bônus inclusos
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
