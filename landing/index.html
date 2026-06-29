@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Rotina Leve — Playbook Anti-Procrastinação para transformar tarefas confusas em pequenas ações possíveis." />
+  <title>Rotina Leve — Playbook Anti-Procrastinação</title>
+  <style>
+    :root {
+      --bg: #FAFBFD;
+      --text: #1E293B;
+      --muted: #64748B;
+      --primary: #4F46E5;
+      --accent: #0EA5E9;
+      --rose: #F43F5E;
+      --card: #FFFFFF;
+      --line: #E2E8F0;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 48px 20px;
+      position: relative;
+      overflow: hidden;
+    }
+    .glow-a, .glow-b {
+      position: absolute;
+      width: 520px;
+      height: 520px;
+      border-radius: 999px;
+      filter: blur(90px);
+      opacity: .18;
+      z-index: 0;
+    }
+    .glow-a { background: var(--primary); top: -160px; right: -180px; }
+    .glow-b { background: var(--rose); bottom: -200px; left: -180px; }
+    .wrap {
+      width: min(1120px, 100%);
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 48px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid rgba(79,70,229,.16);
+      background: white;
+      color: var(--primary);
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    h1 {
+      font-size: clamp(44px, 7vw, 82px);
+      line-height: .96;
+      letter-spacing: -0.06em;
+      margin: 22px 0;
+    }
+    h1 span { color: var(--primary); }
+    .sub {
+      font-size: clamp(18px, 2vw, 22px);
+      color: var(--muted);
+      max-width: 680px;
+    }
+    .actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 32px;
+    }
+    .btn {
+      appearance: none;
+      border: 0;
+      border-radius: 16px;
+      padding: 18px 24px;
+      font-weight: 900;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+      box-shadow: 0 18px 40px rgba(79,70,229,.25);
+    }
+    .btn-secondary {
+      background: white;
+      color: var(--text);
+      border: 1px solid var(--line);
+    }
+    .card {
+      background: rgba(255,255,255,.82);
+      border: 1px solid var(--line);
+      border-radius: 32px;
+      box-shadow: 0 24px 80px rgba(15,23,42,.08);
+      padding: 28px;
+    }
+    .cover {
+      aspect-ratio: 3 / 4;
+      border-radius: 24px;
+      background: linear-gradient(135deg, var(--primary), #111827);
+      color: white;
+      padding: 34px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 480px;
+    }
+    .cover h2 {
+      font-size: 48px;
+      line-height: .95;
+      letter-spacing: -0.05em;
+      margin: 0;
+    }
+    .cover small {
+      color: rgba(255,255,255,.68);
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .benefits {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 28px;
+    }
+    .benefit {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 20px;
+      font-size: 15px;
+      color: var(--muted);
+    }
+    .benefit strong {
+      display: block;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+    .section {
+      padding: 72px 20px;
+    }
+    .section .inner {
+      width: min(980px, 100%);
+      margin: 0 auto;
+    }
+    .price {
+      font-size: 52px;
+      font-weight: 950;
+      color: var(--primary);
+      letter-spacing: -0.05em;
+    }
+    .old {
+      color: var(--muted);
+      text-decoration: line-through;
+      font-size: 22px;
+      margin-right: 12px;
+    }
+    @media (max-width: 840px) {
+      .wrap { grid-template-columns: 1fr; }
+      .benefits { grid-template-columns: 1fr; }
+      .cover { min-height: 400px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="hero">
+    <div class="glow-a"></div>
+    <div class="glow-b"></div>
+
+    <div class="wrap">
+      <section>
+        <div class="badge">Playbook prático · 7 dias</div>
+        <h1>Organize sua rotina sem depender só de <span>força de vontade.</span></h1>
+        <p class="sub">
+          Um playbook anti-procrastinação para transformar tarefas confusas em pequenas ações possíveis, usando blocos curtos, checklists e um plano simples de 7 dias.
+        </p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#oferta">Quero Começar Minha Rotina Leve →</a>
+          <a class="btn btn-secondary" href="#conteudo">Ver o que vem dentro</a>
+        </div>
+      </section>
+
+      <aside class="card">
+        <div class="cover">
+          <div>
+            <small>Playbook Digital</small>
+            <h2>Rotina<br>Leve</h2>
+          </div>
+          <p>Anti-Procrastinação para Mentes Aceleradas</p>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <section class="section" id="conteudo">
+    <div class="inner">
+      <h2>O que você recebe</h2>
+      <div class="benefits">
+        <div class="benefit"><strong>Playbook PDF</strong> Um guia direto para aplicar em 7 dias.</div>
+        <div class="benefit"><strong>Checklist 5 minutos</strong> Um protocolo rápido para sair da trava inicial.</div>
+        <div class="benefit"><strong>Planner de 7 dias</strong> Plano simples para começar, revisar e continuar.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="oferta">
+    <div class="inner card">
+      <h2>Oferta de lançamento</h2>
+      <p><span class="old">R$ 97</span><span class="price">R$ 47</span></p>
+      <p>Pagamento único. Acesso imediato ao playbook e bônus.</p>
+      <a class="btn btn-primary" href="https://pay.cakto.com.br/SEU-LINK-AQUI">Garantir acesso imediato →</a>
+      <p style="font-size:12px;color:var(--muted);margin-top:18px;">
+        Material educativo. Não substitui avaliação médica, psicológica ou tratamento profissional.
+      </p>
+    </div>
+  </section>
+</body>
+</html>
